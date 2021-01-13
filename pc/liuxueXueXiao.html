@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>出国留学-学校展示</title>
+		<link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" type="text/css" href="css/common.css"><link rel="stylesheet" type="text/css" href="css/quill.snow.css">
+	</head>
+
+	<body>
+
+    	<!--header start-->
+		<div class="m-header ">
+			<div class="inner clearfix">
+			<a href="#" class="logo">
+				<img src="img/logo.png" th:src="${logo}"/>
+			</a>
+			<div class="tip-message" th:utext="${slogan}">您与名校只差一个选择</div>
+			</div>
+		</div>
+		<div class="m-nav ">
+			<div class="inner clearfix">
+                <div class="nav-box clearfix">
+                    <a href="index.html">首页</a>
+                    <a href="about.html">关于我们</a>
+                    <a href="notice.html">通知公告</a>
+                    <a href="meishu.html">少儿美术</a>
+                    <a href="liuxue.html" class="active">出国留学</a>
+                    <a href="yikao.html">统招艺考</a>
+                    <a href="taoci.html">陶瓷艺术</a>
+                    <a href="signup.html">在线报名</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
+				<div class="h_tell" th:utext="${contact}">400-9973-993</div>
+			</div>
+		</div>
+		<!--header end-->
+
+        <!--标题banner 与 位置 start-->
+        <div class="wei">
+        	<div class="main">
+            	<span class="left"><a href="index.html">首页</a> / <a href="liuxue.html">出国留学</a> / 学校展示</span>
+            </div>
+        </div>
+        <!--标题banner 与 位置 end-->
+
+        <!--主体内容 start-->
+        <div class="main">
+        	<div class="xq_bai">
+
+                <ul class="ms_four liu_two">
+                    <li class="li right" th:each="item:${colleges}" th:class="${itemStat.index%10==0}?'right'" th:classappend="${itemStat.index%5==0}?'li'">
+                        <div class="pimg">
+                            <img src="img/003.png" th:src="${item.pcPhotoUrl}">
+                            <div class="desc" th:utext="${item.name}">大连东软信息学院</div>
+                        </div>
+                    </li>
+                    <!--<li>
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>
+
+                    <li class="li">
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pimg">
+                            <img src="img/003.png">
+                            <div class="desc">大连东软信息学院</div>
+                        </div>
+                    </li>-->
+                </ul>
+
+            </div>
+        </div>
+        <!--主体内容 end-->
+
+        <!--footer start-->
+		<div class="m-footer">
+			<div class="sign-up">
+				<div class="sign-up-form clearfix">
+					<div class="item-box clearfix">
+						<label class="icon-username"></label>
+						<input type="text" class="text-input" placeholder="请输入姓名"/>
+					</div>
+					<div class="item-box clearfix">
+						<label class="icon-phone"></label>
+						<input type="text" class="text-input" placeholder="请输入手机号"/>
+					</div>
+					<div class="submit-bnt">在线报名</div>
+				</div>
+			</div>
+			<div class="footer-box ">
+				<div class="inner clearfix">
+				<div class="f-box-1 left">
+					<div class="f-title">客服热线</div>
+					<div class="phone-box" th:utext="${contact}">400-9973-993</div>
+					<div class="phone-time" th:utext="${workTime}">周一至每周日08:30-22:30</div>
+				</div>
+				<div class="f-box-2 left">
+					<div class="f-title">关于儒艺</div>
+					<div class="f-nav">
+						<a href="about.html">关于我们</a>
+						<a href="meishu.html">少儿美术</a>
+						<a href="index.html#f1">关于儒艺</a>
+						<a href="yikao.html">统招艺考</a>
+						<a href="index.html#f2">儒艺优势</a>
+						<a href="liuxue.html">出国留学</a>
+						<a href="index.html#f3">儒艺战绩</a>
+						<a href="yikao.html">陶瓷艺术</a>
+						<a href="index.html#f4">儒艺名师</a>
+					</div>
+				</div>
+				<div class="f-box-3 left">
+					<div class="f-title">联系我们</div>
+					<div class="address-box">
+						<p>主教学区：北京市房山区良乡东路华学书院  （大学城隔壁）</p>
+						<p>一校区：北京市海淀区农大南路树村郊野公园16号院 （距离北大、清华、5公里）</p>
+						<p>二校区：北京市大兴区芦花路临22号董陶窑陶瓷制作研究所 </p>
+					</div>
+					<div class="wx-box clearfix">
+						<a href="contact.html"><div class="item-box" >儒艺教育客服</div></a>
+						<a href="contact.html"><div class="item-box" >专业课老师</div></a>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="copy-right" th:utext="${copyRight}">版权信息版权信息版权信息版权信息版权信息版权信息</div>
+		</div>
+        <!--footer end-->
+
+        <script src="js/jquery.min.js"></script>
+        <!--提交成功弹框-->
+        <div class="tan_bm" style="display:none">
+            <h2>报名成功</h2>
+            <h6>稍后客服将会和您联系</h6>
+            <p class="p_btn">
+                <input type="button" class="btn quxiao" value="取消">
+                <input type="button" class="btn btn_qd" value="确认">
+            </p>
+        </div>
+        <script src="js/layer/layer.js"></script>
+        <script type="text/javascript">
+        $(function(){
+            //弹框
+            $(".btn_tj,.submit-bnt").click(function(){
+                layer.open({
+                    type: 1,
+                    title: false,
+                    closeBtn: 0,
+                    area: ['auto', 'auto'],
+                    shade : [0.6 , '#000' , false],
+                    skin: 'layui-layer-nobg', //没有背景色
+                    shadeClose: false,
+                    closeBtn:0,
+                    content: $(".tan_bm")
+                });
+                return false;
+            })
+            $(".quxiao,.btn_qd").click(function(){
+                layer.closeAll();
+            })
+        })
+        </script>
+
+	</body>
+
+</html>

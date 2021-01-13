@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>陶瓷艺术</title>
+		<link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" type="text/css" href="css/common.css"><link rel="stylesheet" type="text/css" href="css/quill.snow.css">
+	</head>
+
+	<body class="bg">
+
+    	<!--header start-->
+		<div class="m-header ">
+			<div class="inner clearfix">
+			<a href="#" class="logo">
+				<img src="img/logo.png" th:src="${logo}"/>
+			</a>
+			<div class="tip-message" th:utext="${slogan}">您与名校只差一个选择</div>
+			</div>
+		</div>
+		<div class="m-nav ">
+			<div class="inner clearfix">
+                <div class="nav-box clearfix">
+                    <a href="index.html">首页</a>
+                    <a href="about.html">关于我们</a>
+                    <a href="notice.html">通知公告</a>
+                    <a href="meishu.html">少儿美术</a>
+                    <a href="liuxue.html">出国留学</a>
+                    <a href="yikao.html">统招艺考</a>
+                    <a href="taoci.html" class="active">陶瓷艺术</a>
+                    <a href="signup.html">在线报名</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
+				<div class="h_tell" th:utext="${contact}">400-9973-993</div>
+			</div>
+		</div>
+		<!--header end-->
+
+        <!--标题banner 与 位置 start-->
+        <div class="bannerTitle" style="background:url(img/img3.png) no-repeat top center; background-size:auto 100%" th:style="|background:url(${cover}) no-repeat top center; background-size:auto 100%|">
+        	<div class="main">
+            	陶瓷艺术<br>
+                CERMAIC ART
+            </div>
+        </div>
+        <div class="wei">
+        	<div class="main">
+            	<span class="left"><a href="index.html">首页</a> / 陶瓷艺术</span>
+            </div>
+        </div>
+        <!--标题banner 与 位置 end-->
+
+        <!--主体内容 start-->
+        <div class="list_one">
+        	<ul>
+            	<li>
+                	<img src="img/006.png" class="img" th:src="${introCover}">
+                    <div class="name">
+                    	<h2>学校介绍</h2>
+                        <h3>SCHOOL INTRODUCTION</h3>
+                    </div>
+                    <div class="desc" th:utext="${introDesc}">
+                        本校拥有非遗传承大师数位，非遗课程体系完整，学员可面对面接触非遗大师，并传承非遗文化课程，提高学员对传统文化的高度认知。<br>
+                        各地小学、中学艺术研学定制，课程独特，大师授课，为学员提高眼界、打造高端艺术平台提供最优质的资源服务。<br>
+                        本校落户艺术大师及美院博导数位，提供专项艺术人才培养，可直接进入大师工作室学习，为未来艺术之路做好起航。<br>
+                        学校装修为五星标准，内设有活动区、健身房、超市、餐厅、美术馆、成列馆、大师创作基地、周末影院；教室教学设备齐全，科技教学占35%；宿舍为四人间—六人间，独立卫生间、洗漱间。（全封闭）
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--大师风采-->
+        <div class="main">
+        	<div class="top_title">
+            	大师风采
+                <a href="taociDaShi.html">更多></a>
+            </div>
+            <ul class="ms_two">
+            	<li th:each="item:${teachers}">
+                	<a href="taociDaShi.html"><img src="img/thumb.png" th:src="${item.pcPhotoUrl}"></a>
+                	<p class="name" th:utext="${item.name}">李刚</p>
+                    <p class="desc" th:utext="${item.intro}">儒艺教育总校长</p>
+                </li>
+                <!--<li>
+                	<a href="taociDaShi.html"><img src="img/thumb.png"></a>
+                	<p class="name">李刚</p>
+                    <p class="desc">儒艺教育总校长</p>
+                </li>
+                <li>
+                	<a href="taociDaShi.html"><img src="img/thumb.png"></a>
+                	<p class="name">李刚</p>
+                    <p class="desc">儒艺教育总校长</p>
+                </li>
+                <li>
+                	<a href="taociDaShi.html"><img src="img/thumb.png"></a>
+                	<p class="name">李刚</p>
+                    <p class="desc">儒艺教育总校长</p>
+                </li>
+                <li>
+                	<a href="taociDaShi.html"><img src="img/thumb.png"></a>
+                	<p class="name">李刚</p>
+                    <p class="desc">儒艺教育总校长</p>
+                </li>-->
+            </ul>
+        </div>
+
+        <!--教学环境-->
+        <div class="main">
+        	<div class="top_title">
+            	教学环境
+                <a href="taociHuanJing.html">更多></a>
+            </div>
+            <ul class="ms_four">
+            	<li class="li right" th:each="item:${teachEnv}" th:class="${itemStat.index%10==0}?'right'" th:classappend="${itemStat.index%5==0}?'li'">
+                	<img src="img/003.png" th:src="${item}">
+                </li>
+            	<!--<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>-->
+            </ul>
+        </div>
+
+        <!--作品展示-->
+        <div class="main">
+        	<div class="top_title">
+            	作品展示
+                <a href="taociZuoPin.html">更多></a>
+            </div>
+            <ul class="ms_four">
+				<!-- 左 1 右 4 -->
+				<li class="li right" th:each="item:${work}" th:class="${itemStat.count%6==0}?'right'" th:classappend="${itemStat.index%5==0}?'li'">
+					<img src="img/003.png" th:src="${item}">
+				</li>
+            	<!--<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>-->
+            </ul>
+        </div>
+
+
+        <!--主题研学-->
+        <div class="main">
+        	<div class="top_title">
+            	主题研学
+                <a href="taociZhuTiYanXue.html">更多></a>
+            </div>
+            <ul class="tc_one">
+            	<li th:each="item:${researchs}">
+                	<a href="taociYanXueDetails.html" th:href="|taociYanXueDetails.html?id=${item.id}|">
+                    	<p class="pimg"><img src="img/003.png" th:src="${item.pcPhotoUrl}"></p>
+                        <h3 th:src="${item.title}">孔庙国学之行</h3>
+                    </a>
+                </li>
+            	<!--<li>
+                	<a href="taociYanXueDetails.html">
+                    	<p class="pimg"><img src="img/003.png"></p>
+                        <h3>孔庙国学之行</h3>
+                    </a>
+                </li>
+            	<li>
+                	<a href="taociYanXueDetails.html">
+                    	<p class="pimg"><img src="img/003.png"></p>
+                        <h3>孔庙国学之行</h3>
+                    </a>
+                </li>
+            	<li>
+                	<a href="taociYanXueDetails.html">
+                    	<p class="pimg"><img src="img/003.png"></p>
+                        <h3>孔庙国学之行</h3>
+                    </a>
+                </li>
+                <li>
+                	<a href="taociYanXueDetails.html">
+                    	<p class="pimg"><img src="img/003.png"></p>
+                        <h3>孔庙国学之行</h3>
+                    </a>
+                </li>
+                <li>
+                	<a href="taociYanXueDetails.html">
+                    	<p class="pimg"><img src="img/003.png"></p>
+                        <h3>孔庙国学之行</h3>
+                    </a>
+                </li>
+                <li>
+                	<a href="taociYanXueDetails.html">
+                    	<p class="pimg"><img src="img/003.png"></p>
+                        <h3>孔庙国学之行</h3>
+                    </a>
+                </li>
+                <li>
+                	<a href="taociYanXueDetails.html">
+                    	<p class="pimg"><img src="img/003.png"></p>
+                        <h3>孔庙国学之行</h3>
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+
+        <!--合作单位+名校保送-->
+        <div class="main">
+        	<div class="top_title">
+            	合作单位
+                <!--<a href="#">更多></a>-->
+            </div>
+            <div class="tc_two">
+                <img src="img/p-1.png" th:each="item:${partner}" th:src="${item}">
+                <!--<img src="img/p-2.png">
+                <img src="img/p-3.png">
+                <img src="img/p-4.png">
+                <img src="img/p-5.png">
+                <img src="img/p-6.png">
+                <img src="img/p-7.png">
+                <img src="img/p-8.png">
+                <img src="img/p-9.png">
+                <img src="img/p-10.png">-->
+            </div>
+        </div>
+
+        <!--主体内容 end-->
+
+        <!--footer start-->
+		<div class="m-footer">
+			<div class="sign-up">
+				<div class="sign-up-form clearfix">
+					<div class="item-box clearfix">
+						<label class="icon-username"></label>
+						<input type="text" class="text-input" placeholder="请输入姓名"/>
+					</div>
+					<div class="item-box clearfix">
+						<label class="icon-phone"></label>
+						<input type="text" class="text-input" placeholder="请输入手机号"/>
+					</div>
+					<div class="submit-bnt">在线报名</div>
+				</div>
+			</div>
+			<div class="footer-box ">
+				<div class="inner clearfix">
+				<div class="f-box-1 left">
+					<div class="f-title">客服热线</div>
+					<div class="phone-box" th:utext="${contact}">400-9973-993</div>
+					<div class="phone-time" th:utext="${workTime}">周一至每周日08:30-22:30</div>
+				</div>
+				<div class="f-box-2 left">
+					<div class="f-title">关于儒艺</div>
+					<div class="f-nav">
+						<a href="about.html">关于我们</a>
+						<a href="meishu.html">少儿美术</a>
+						<a href="index.html#f1">关于儒艺</a>
+						<a href="yikao.html">统招艺考</a>
+						<a href="index.html#f2">儒艺优势</a>
+						<a href="liuxue.html">出国留学</a>
+						<a href="index.html#f3">儒艺战绩</a>
+						<a href="yikao.html">陶瓷艺术</a>
+						<a href="index.html#f4">儒艺名师</a>
+					</div>
+				</div>
+				<div class="f-box-3 left">
+					<div class="f-title">联系我们</div>
+					<div class="address-box">
+						<p>主教学区：北京市房山区良乡东路华学书院  （大学城隔壁）</p>
+						<p>一校区：北京市海淀区农大南路树村郊野公园16号院 （距离北大、清华、5公里）</p>
+						<p>二校区：北京市大兴区芦花路临22号董陶窑陶瓷制作研究所 </p>
+					</div>
+					<div class="wx-box clearfix">
+						<a href="contact.html"><div class="item-box" >儒艺教育客服</div></a>
+						<a href="contact.html"><div class="item-box" >专业课老师</div></a>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="copy-right" th:utext="${copyRight}">版权信息版权信息版权信息版权信息版权信息版权信息</div>
+		</div>
+        <!--footer end-->
+
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script src="js/lightslider.js"></script>
+    <script type="text/javascript">
+    $(function(){
+
+		$("#ms_three").lightSlider({item:1,slideMove:1,loop:true,auto:true,mode:'slide',pause:4000,slideMargin:0});
+	})
+    </script>
+    <!--提交成功弹框-->
+    <div class="tan_bm" style="display:none">
+        <h2>报名成功</h2>
+        <h6>稍后客服将会和您联系</h6>
+        <p class="p_btn">
+            <input type="button" class="btn quxiao" value="取消">
+            <input type="button" class="btn btn_qd" value="确认">
+        </p>
+    </div>
+    <script src="js/layer/layer.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        //弹框
+        $(".btn_tj,.submit-bnt").click(function(){
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 0,
+                area: ['auto', 'auto'],
+                shade : [0.6 , '#000' , false],
+                skin: 'layui-layer-nobg', //没有背景色
+                shadeClose: false,
+                closeBtn:0,
+                content: $(".tan_bm")
+            });
+            return false;
+        })
+        $(".quxiao,.btn_qd").click(function(){
+            layer.closeAll();
+        })
+    })
+    </script>
+
+
+	<script type="text/javascript" src="js/backend/common.js"></script>
+	<script type="text/javascript" src="js/backend/registration.js"></script>
+</html>

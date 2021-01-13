@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>少儿美术</title>
+		<link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" type="text/css" href="css/common.css"><link rel="stylesheet" type="text/css" href="css/quill.snow.css">
+	</head>
+
+	<body class="bg">
+
+    	<!--header start-->
+		<div class="m-header ">
+			<div class="inner clearfix">
+			<a href="#" class="logo">
+				<img src="img/logo.png" th:src="${logo}"/>
+			</a>
+			<div class="tip-message" th:utext="${slogan}">您与名校只差一个选择</div>
+			</div>
+		</div>
+		<div class="m-nav ">
+			<div class="inner clearfix">
+                <div class="nav-box clearfix">
+                    <a href="index.html">首页</a>
+                    <a href="about.html">关于我们</a>
+                    <a href="notice.html">通知公告</a>
+                    <a href="meishu.html" class="active">少儿美术</a>
+                    <a href="liuxue.html">出国留学</a>
+                    <a href="yikao.html">统招艺考</a>
+                    <a href="taoci.html">陶瓷艺术</a>
+                    <a href="signup.html">在线报名</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
+				<div class="h_tell" th:utext="${contact}">400-9973-993</div>
+			</div>
+		</div>
+		<!--header end-->
+
+        <!--标题banner 与 位置 start-->
+        <div class="bannerTitle" style="background:url(img/img5.png) no-repeat top center; background-size:auto 100%" th:style="|background:url(${cover}) no-repeat top center; background-size:auto 100%|">
+        	<div class="main">
+            	少儿美术<br>
+                CHILDREN'S ART
+            </div>
+        </div>
+        <div class="wei">
+        	<div class="main">
+            	<span class="left"><a href="index.html">首页</a> / 少儿美术</span>
+            </div>
+        </div>
+        <!--标题banner 与 位置 end-->
+
+        <!--主体内容 start-->
+        <div class="list_one">
+        	<ul>
+            	<li>
+                	<img src="img/001.png" class="img" th:src="${introCover}">
+                    <div class="name">
+                    	<h2>美术介绍</h2>
+                        <h3>ART INTRODUCTION</h3>
+                    </div>
+                    <div class="desc" th:utext="${introDesc}">
+						将艺术教育、心理学及个人特点相结合的美术课程，从美术的狭义和广义两个维度上将学员内心真实的想法激发出来，以培养学员对美的认识、体验、感受、欣赏、创造、想象、观察能力，从而使学员拥有优秀的艺术素养。<br>
+						开放的艺术性教育，通过艺术来引导孩子综合道德素养的发展。课程不单纯刻板的追求完美作品，而是通过由心的自由艺术行为的表达来培养孩子的自信、勇气、责任、创新的精神。
+                    </div>
+                </li>
+                <li>
+                	<img src="img/002.png" class="img" th:src="${courseSystemCover}">
+                   	<div class="name">
+                    	<h2>课程体系</h2>
+                        <h3>EIGHT SYSTEMS</h3>
+                    </div>
+                    <div class="desc" th:utext="${courseSystemDesc}">
+                        将现代美术学院专业课程与少儿绘画心理学结合，以中国传统文化与西方当代艺术做背景，研发出（八大课程体系），适合不同年龄段学员发展的综合课程体系。<br>
+                        八大美院不同专业老师、国家一级美术师、中国美协、中央美术学院、清华美术学院等，拥有过硬的专业技能和艺术修养，丰富的教学经验能全方位的保证学员的教学质量。
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--班级介绍-->
+        <div class="main">
+        	<div class="top_title">
+            	班级介绍
+                <a href="moreClass.html">更多></a>
+            </div>
+            <ul class="ms_one">
+            	<li th:each="item:${classGrades}">
+                	<a href="classDetails.html" class="a" th:href="|classDetails.html?id=${item.id}|">
+                    	<img src="img/003.png" th:src="${item.pcPhotoUrl}">
+                        <p class="top" th:utext="${item.title}">（美术）综合班</p>
+                        <div class="desc" th:utext="${item.intro}">
+                        	针对联考及全国综合院校，联考保过二本线以上、一般单招保过。（主修专业：素描、色彩、速写）
+                        </div>
+                    </a>
+                </li>
+                <!--<li>
+                	<a href="classDetails.html" class="a">
+                    	<img src="img/003.png">
+                        <p class="top">（美术）综合班</p>
+                        <div class="desc">
+                        	针对联考及全国综合院校，联考保过二本线以上、一般单招保过。（主修专业：素描、色彩、速写）
+                        </div>
+                    </a>
+                </li>
+                <li>
+                	<a href="classDetails.html" class="a">
+                    	<img src="img/003.png">
+                        <p class="top">（美术）综合班</p>
+                        <div class="desc">
+                        	针对联考及全国综合院校，联考保过二本线以上、一般单招保过。（主修专业：素描、色彩、速写）
+                        </div>
+                    </a>
+                </li>
+                <li>
+                	<a href="classDetails.html" class="a">
+                    	<img src="img/003.png">
+                        <p class="top">（美术）综合班</p>
+                        <div class="desc">
+                        	针对联考及全国综合院校，联考保过二本线以上、一般单招保过。（主修专业：素描、色彩、速写）
+                        </div>
+                    </a>
+                </li>
+                <li>
+                	<a href="classDetails.html" class="a">
+                    	<img src="img/003.png">
+                        <p class="top">（美术）综合班</p>
+                        <div class="desc">
+                        	针对联考及全国综合院校，联考保过二本线以上、一般单招保过。（主修专业：素描、色彩、速写）
+                        </div>
+                    </a>
+                </li>
+                <li>
+                	<a href="classDetails.html" class="a">
+                    	<img src="img/003.png">
+                        <p class="top">（美术）综合班</p>
+                        <div class="desc">
+                        	针对联考及全国综合院校，联考保过二本线以上、一般单招保过。（主修专业：素描、色彩、速写）
+                        </div>
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+
+        <!--少儿名师-->
+        <div class="main">
+        	<div class="top_title">
+            	少儿名师
+                <a href="meishuMingShi.html">更多></a>
+            </div>
+            <ul class="ms_two">
+            	<li th:each="item:${teachers}">
+                	<a href="meishuMingShi.html"><img src="img/thumb.png" th:src="${item.pcPhotoUrl}"></a>
+                	<p class="name" th:utext="${item.name}">李刚</p>
+                    <p class="desc" th:utext="${item.intro}">儒艺教育总校长</p>
+                </li>
+                <!--<li>
+                	<a href="meishuMingShi.html"><img src="img/thumb.png"></a>
+                	<p class="name">李刚</p>
+                    <p class="desc">儒艺教育总校长</p>
+                </li>
+                <li>
+                	<a href="meishuMingShi.html"><img src="img/thumb.png"></a>
+                	<p class="name">李刚</p>
+                    <p class="desc">儒艺教育总校长</p>
+                </li>
+                <li>
+                	<a href="meishuMingShi.html"><img src="img/thumb.png"></a>
+                	<p class="name">李刚</p>
+                    <p class="desc">儒艺教育总校长</p>
+                </li>
+                <li>
+                	<a href="meishuMingShi.html"><img src="img/thumb.png"></a>
+                	<p class="name">李刚</p>
+                    <p class="desc">儒艺教育总校长</p>
+                </li>-->
+            </ul>
+        </div>
+
+        <!--学员风采-->
+        <div class="main">
+        	<div class="top_title">
+            	学员风采
+            </div>
+            <div class="ms_three">
+                <div class="item">
+                    <ul id="ms_three" class="content-slider">
+                        <li th:each="item:${studentStyle}"><img src="img/004.jpg" th:src="${item}"></li>
+                        <!--<li><img src="img/004.jpg"></li>
+                        <li><img src="img/004.jpg"></li>
+                        <li><img src="img/004.jpg"></li>
+                        <li><img src="img/004.jpg"></li>
+                        <li><img src="img/004.jpg"></li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--教学环境-->
+        <div class="main">
+        	<div class="top_title">
+            	教学环境
+                <a href="meishuHuanJing.html">更多></a>
+            </div>
+            <ul class="ms_four">
+            	<li class="li" th:each="item:${teachEnv}">
+                	<img src="img/003.png" th:src="${item}">
+                </li>
+            	<!--<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>-->
+            </ul>
+        </div>
+
+        <!--学生作品-->
+        <div class="main">
+        	<div class="top_title">
+            	学生作品
+                <a href="meishuZhuoPin.html">更多></a>
+            </div>
+            <ul class="ms_four">
+            	<li class="li right" th:each="item:${work}" th:class="${itemStat.index%10==0}?'right'" th:classappend="${itemStat.index%5==0}?'li'">
+                	<img src="img/003.png" th:src="${item}">
+                </li>
+            	<!--<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>
+            	<li>
+                	<img src="img/003.png">
+                </li>-->
+            </ul>
+        </div>
+
+        <!--比赛奖项-->
+        <div class="main">
+        	<div class="top_title">
+            	比赛奖项
+            </div>
+            <div class="ms_three">
+                <img src="img/005.jpg" th:src="${award}">
+            </div>
+        </div>
+
+        <!--主题活动-->
+        <div class="main">
+        	<div class="top_title">
+            	主题活动
+                <a href="meishuHuoDong.html">更多></a>
+            </div>
+            <ul class="ms_five">
+            	<li th:each="item:${activitys}">
+                	<a href="meishuHuoDongDetails.html" th:href="|meishuHuoDongDetails.html?id=${item.id}|">
+                    	<img src="img/003.png" class="img" th:src="${item.pcPhotoUrl}">
+                        <div class="right">
+                            <div class="top" th:utext="${item.title}">世界环境日，儿童环境教育基地建设成果展示活动来啦！</div>
+                            <div class="desc" th:utext="${item.intro}">
+                                观察，探索，合作，专注，想象，创造，表达，孩子们在游戏中忘却一切，纸在他们的世中忘却一切，纸在他们的世界里，界里，可以从平...
+                                <span class="mm">查看更多></span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            	<!--<li>
+                	<a href="meishuHuoDongDetails.html">
+                    	<img src="img/003.png" class="img">
+                        <div class="right">
+                            <div class="top">世界环境日，儿童环境教育基地建设成果展示活动来啦！</div>
+                            <div class="desc">
+                                观察，探索，合作，专注，想象，创造，表达，孩子们在游戏中忘却一切，纸在他们的世中忘却一切，纸在他们的世界里，界里，可以从平...
+                                <span class="mm">查看更多></span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                	<a href="meishuHuoDongDetails.html">
+                    	<img src="img/003.png" class="img">
+                        <div class="right">
+                            <div class="top">世界环境日，儿童环境教育基地建设成果展示活动来啦！</div>
+                            <div class="desc">
+                                观察，探索，合作，专注，想象，创造，表达，孩子们在游戏中忘却一切，纸在他们的世中忘却一切，纸在他们的世界里，界里，可以从平...
+                                <span class="mm">查看更多></span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                	<a href="meishuHuoDongDetails.html">
+                    	<img src="img/003.png" class="img">
+                        <div class="right">
+                            <div class="top">世界环境日，儿童环境教育基地建设成果展示活动来啦！</div>
+                            <div class="desc">
+                                观察，探索，合作，专注，想象，创造，表达，孩子们在游戏中忘却一切，纸在他们的世中忘却一切，纸在他们的世界里，界里，可以从平...
+                                <span class="mm">查看更多></span>
+                            </div>
+                        </div>
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+        <!--主体内容 end-->
+
+        <!--footer start-->
+		<div class="m-footer">
+			<div class="sign-up">
+				<div class="sign-up-form clearfix">
+					<div class="item-box clearfix">
+						<label class="icon-username"></label>
+						<input type="text" class="text-input" placeholder="请输入姓名"/>
+					</div>
+					<div class="item-box clearfix">
+						<label class="icon-phone"></label>
+						<input type="text" class="text-input" placeholder="请输入手机号"/>
+					</div>
+					<div class="submit-bnt">在线报名</div>
+				</div>
+			</div>
+			<div class="footer-box ">
+				<div class="inner clearfix">
+				<div class="f-box-1 left">
+					<div class="f-title">客服热线</div>
+					<div class="phone-box" th:utext="${contact}">400-9973-993</div>
+					<div class="phone-time" th:utext="${workTime}">周一至每周日08:30-22:30</div>
+				</div>
+				<div class="f-box-2 left">
+					<div class="f-title">关于儒艺</div>
+					<div class="f-nav">
+						<a href="about.html">关于我们</a>
+						<a href="meishu.html">少儿美术</a>
+						<a href="index.html#f1">关于儒艺</a>
+						<a href="yikao.html">统招艺考</a>
+						<a href="index.html#f2">儒艺优势</a>
+						<a href="liuxue.html">出国留学</a>
+						<a href="index.html#f3">儒艺战绩</a>
+						<a href="yikao.html">陶瓷艺术</a>
+						<a href="index.html#f4">儒艺名师</a>
+					</div>
+				</div>
+				<div class="f-box-3 left">
+					<div class="f-title">联系我们</div>
+					<div class="address-box">
+						<p>主教学区：北京市房山区良乡东路华学书院  （大学城隔壁）</p>
+						<p>一校区：北京市海淀区农大南路树村郊野公园16号院 （距离北大、清华、5公里）</p>
+						<p>二校区：北京市大兴区芦花路临22号董陶窑陶瓷制作研究所 </p>
+					</div>
+					<div class="wx-box clearfix">
+						<a href="contact.html"><div class="item-box" >儒艺教育客服</div></a>
+						<a href="contact.html"><div class="item-box" >专业课老师</div></a>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="copy-right" th:utext="${copyRight}">版权信息版权信息版权信息版权信息版权信息版权信息</div>
+		</div>
+        <!--footer end-->
+
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script src="js/lightslider.js"></script>
+    <script type="text/javascript">
+    $(function(){
+
+		$("#ms_three").lightSlider({item:1,slideMove:1,loop:true,auto:true,mode:'slide',pause:4000,slideMargin:0});
+	})
+    </script>
+    <!--提交成功弹框-->
+    <div class="tan_bm" style="display:none">
+        <h2>报名成功</h2>
+        <h6>稍后客服将会和您联系</h6>
+        <p class="p_btn">
+            <input type="button" class="btn quxiao" value="取消">
+            <input type="button" class="btn btn_qd" value="确认">
+        </p>
+    </div>
+
+    <script src="js/layer/layer.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        //弹框
+        $(".btn_tj,.submit-bnt").click(function(){
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 0,
+                area: ['auto', 'auto'],
+                shade : [0.6 , '#000' , false],
+                skin: 'layui-layer-nobg', //没有背景色
+                shadeClose: false,
+                closeBtn:0,
+                content: $(".tan_bm")
+            });
+            return false;
+        })
+        $(".quxiao,.btn_qd").click(function(){
+            layer.closeAll();
+        })
+    })
+    </script>
+
+
+    <script type="text/javascript" src="js/backend/common.js" ></script>
+    <script type="text/javascript" src="js/backend/registration.js" ></script>
+</html>

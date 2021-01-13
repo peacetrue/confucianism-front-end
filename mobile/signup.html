@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>在线报名</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script src="js/jQuery.js"></script>
+	<script src="js/common.js"></script>
+    <script src="js/layer/layer.js"></script>
+</head>
+
+<body>
+
+    <!--header start-->
+    <header>
+    	<div class="header">
+        	<a href="#"><img src="images/logo.png" class="logo"></a>
+            <span class="btn_nav"></span>
+            <ul class="nav">
+            	<li><a href="index.html"><i><img src="images/m1.png"></i>首页</a></li>
+            	<li><a href="about.html"><i><img src="images/m2.png"></i>关于我们</a></li>
+            	<li><a href="notice.html"><i><img src="images/m3.png"></i>通知公告</a></li>
+            	<li><a href="meishu.html"><i><img src="images/m4.png"></i>少儿美术</a></li>
+            	<li><a href="yikao.html"><i><img src="images/m5.png"></i>统招艺考</a></li>
+            	<li><a href="liuxue.html"><i><img src="images/m6.png"></i>出国留学</a></li>
+            	<li><a href="taoci.html"><i><img src="images/m7.png"></i>陶瓷艺术</a></li>
+            	<li><a href="signup.html"><i><img src="images/m8.png"></i>在线报名</a></li>
+            	<li><a href="contact.html"><i><img src="images/m9.png"></i>联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--header end-->
+    
+    <!--标题banner 与 位置 start-->
+    <div class="banner">
+    	<img src="images/b1.png">
+    </div>	
+    <div class="wei">
+        <div class="main">
+            <span class="left"><a href="index.html">首页</a> / 在线报名</span>
+        </div>
+    </div>
+    <!--标题banner 与 位置 end-->
+    
+    <!--main start-->
+    <div class="bm_main">
+        <table class="bm_table">
+            <tr>
+                <th><span>*</span> 姓名:</th>
+                <td><input type="text" class="txt" placeholder="请输入"></td>
+            </tr>
+            <tr>
+                <th>年龄:</th>
+                <td><input type="text" class="txt" placeholder="请输入"></td>
+            </tr>
+            <tr>
+                <th><span>*</span> 手机号:</th>
+                <td><input type="text" class="txt" placeholder="请输入"></td>
+            </tr>
+            <tr>
+                <th><span>*</span> 报名类型:</th>
+                <td>
+                    <p class="sel_xz">请选择</p>
+                    <ul class="div_la">
+                        <li>少儿美术<i></i>
+                            <p>
+                                <span>米罗涂鸦班</span>
+                                <span>毕加索创意班</span>
+                                <span>达芬奇造型班</span>
+                                <span>陶瓷艺术创作班</span>
+                                <span>德加大师班</span>
+                                <span>美院班</span>
+                                <span>国画书法班</span>
+                                <span>高端科目托管班</span>
+                            </p>
+                        </li>
+                        <li>统招艺考<i></i>
+                            <p>
+                                <span>（美术）综合班</span>
+                                <span>（美术）美院班</span>
+                                <span>（央清）精品班</span>
+                                <span>寒暑假班</span>
+                                <span>（美术）联考班</span>
+                                <span>名校直通班</span>
+                            </p>
+                        </li>
+                        <li>出国留学</li>
+                        <li>陶瓷艺术</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>电子邮箱:</th>
+                <td><input type="text" class="txt" placeholder="请输入"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="td"><input type="button" class="btn btn_tj" value="提交"></td>
+            </tr>
+        </table>
+    </div>
+    <!--main end-->
+    
+    <!--footer start-->
+    <footer>
+    	<div class="f_one">
+        	<input type="text" class="txt" placeholder="请输入姓名">
+        	<input type="text" class="txt txt_tell" placeholder="请输入手机号">
+            <input type="button" class="btn baoming_btn" value="在线报名">
+        </div>
+        <div class="f_two">
+        	<p class="p1">客服热线</p>
+            <a href="tel:4009973993" class="a_tell">400-9973-993</a>
+            <p class="p2">周一至每周日08:30-22:30</p>
+        </div>
+        <div class="f_three">
+        	<p>
+            	<a href="tell:4009973993"><span class="s1">联系我们</span></a>
+                <a href="signup.html"><span class="s2">在线报名</span></a>
+            </p>
+        </div>
+    </footer>
+    <!--提交报名 成功弹框-->
+    <div class="tan_bm" style="display:none">
+        <h2>报名成功</h2>
+        <h6>稍后客服将会和您联系</h6>
+        <p class="p_btn">
+            <input type="button" class="btn quxiao" value="取消">
+            <input type="button" class="btn btn_qd" value="确认">
+        </p>
+    </div>
+    <!--footer end-->
+    
+    <script type="text/javascript">
+    $(function(){
+		$(".sel_xz").click(function(){
+			if($(this).attr("class")=="sel_xz")
+				$(this).addClass("sel");
+			else
+				$(this).removeClass("sel");
+				
+			$(".div_la").slideToggle(100);
+			$(".div_la").css("overflow","visible");
+		})
+		$(".div_la li").click(function(){
+			$(".div_la li").removeClass("sel");
+			$(this).addClass("sel");
+			if($(this).find("p").length==1){
+				$(".div_la li p").slideUp(50);
+				$(this).find("p").slideDown(100);
+			}
+			else{
+				$(".div_la li p").slideUp(50);
+				$(".sel_xz").html($(this).text());
+				$(".div_la").slideToggle();
+				$(".sel_xz").removeClass("sel");
+			}
+		})
+		$(".div_la li p span").click(function(){
+			$(".sel_xz").html($(this).text());
+			$(".div_la").slideToggle();
+			$(".sel_xz").removeClass("sel");
+		})
+		
+		$(document).bind("click",function(e){ 
+			var target = $(e.target); 
+			if(target.closest(".sel_xz,.div_la").length == 0){ 
+				$(".div_la").slideUp();
+				$(".sel_xz").removeClass("sel");
+			} 
+	 	}) 
+		
+	})
+    </script>
+
+</body>
+</html>

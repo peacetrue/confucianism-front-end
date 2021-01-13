@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="swiper/swiper.min.css" />
+	</head>
+	<body>
+		<!--header start-->
+		<div class="m-header ">
+			<div class="inner clearfix">
+			<a href="index.html" class="logo">
+				<img src="img/logo.png" th:src="${logo}"/>
+			</a>
+			<div class="tip-message" th:utext="${slogan}">您与名校只差一个选择</div>
+			</div>
+		</div>
+		<div class="m-nav ">
+			<div class="inner clearfix">
+                <div class="nav-box clearfix">
+                    <a href="index.html" class="active">首页</a>
+                    <a href="about.html">关于我们</a>
+                    <a href="notice.html">通知公告</a>
+                    <a href="meishu.html">少儿美术</a>
+                    <a href="liuxue.html">出国留学</a>
+                    <a href="yikao.html">统招艺考</a>
+                    <a href="taoci.html">陶瓷艺术</a>
+                    <a href="signup.html">在线报名</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
+				<div class="h_tell" th:utext="${contact}">400-9973-993</div>
+			</div>
+		</div>
+		<!--header end-->
+
+		<div class="m-banner">
+			<div class="b-nav">
+				<div class="nav-box">
+				<dl>
+					<dt class="icon-1">少儿美术</dt>
+					<dd class="clearfix">
+						<a href="meishuHuoDong.html">主题活动</a>
+						<a href="meishuZhuoPin.html">学生作品</a>
+						<a href="meishuMingShi.html">少儿名师</a>
+						<a href="meishuHuanJing.html">教学环境</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt class="icon-2">统招艺考</dt>
+					<dd class="clearfix">
+						<a href="yikaoHuanJing.html">校园环境</a>
+						<a href="yikaoZuoPin.html">优秀作品</a>
+						<a href="yikaoMingShi.html">名师风采</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt class="icon-3">出国留学</dt>
+					<dd class="clearfix">
+						<a href="liuxueHeZuo.html">合作院校</a>
+						<a href="liuxueHeZuo.html">名校保送</a>
+						<a href="liuxueAnLi.html">成功案例</a>
+					</dd>
+				</dl>
+				<dl  >
+					<dt class="icon-4">陶瓷艺术</dt>
+					<dd class="clearfix">
+						<a href="taociZhuTiYanXue.html">主题研学</a>
+						<a href="taociDaShi.html">大师风采</a>
+						<a href="taociZuoPin.html">作品展示</a>
+					</dd>
+				</dl>
+				</div>
+			</div>
+			 <!-- Swiper -->
+			  <div class="swiper-container banner-swiper">
+			    <div class="swiper-wrapper">
+			      <div class="swiper-slide" style="background: url(img/banner.png) center no-repeat;" th:each="item:${cover}" th:style="|background: url(${item}) center no-repeat;|"></div>
+<!--			      <div class="swiper-slide" style="background: url(img/banner.png) center no-repeat;"></div>-->
+			    </div>
+			    <!-- Add Pagination -->
+			    <div class="swiper-pagination"></div>
+			  </div>
+
+			  <!-- Swiper JS -->
+			  <script src="swiper/swiper.min.js"></script>
+
+			  <!-- Initialize Swiper -->
+			  <script>
+			    var swiper = new Swiper('.banner-swiper', {
+			      pagination: {
+			        el: '.swiper-pagination',
+			      },
+			      autoplay:true,//等同于以下设置
+			      loop : true,
+			    });
+			  </script>
+		</div>
+		<!--banenr end-->
+
+		<div class="m-count clearfix">
+			<div class="inner clearfix">
+                <a href="meishu.html" class="item-box">
+                    <img src="img/i1.png" class="img1">
+                    <img src="img/index-1.png" class="img2">
+                    <p class="name">少儿美术</p>
+                    <div class="desc"><th:block th:utext="${scoreChildrenArt}">成功培养<span>5000</span>小朋友<br/><span>100</span>名老师</th:block></div>
+                </a>
+                <a href="yikao.html" class="item-box">
+                    <img src="img/i2.png" class="img1">
+                    <img src="img/index-2.png" class="img2">
+                    <p class="name">统招艺考</p>
+					<div class="desc"><th:block th:utext="${scoreTest}"><span>1020</span>人成功出国 <br/><span>100</span>个top10学校</br></th:block></div>
+                </a>
+                <a href="liuxue.html" class="item-box">
+                    <img src="img/i3.png" class="img1">
+                    <img src="img/index-3.png" class="img2">
+                    <p class="name">出国留学</p>
+					<div class="desc"><th:block th:utext="${scoreStudy}">平均提分<span>160</span><br/><span>100</span>个top10学校 副本</br></th:block></div>
+                </a>
+                <a href="taoci.html" class="item-box">
+                    <img src="img/i4.png" class="img1">
+                    <img src="img/index-4.png" class="img2">
+                    <p class="name">陶瓷艺术</p>
+					<div class="desc"><th:block th:utext="${scoreCeramicArt}">平均提分<span>160</span><br/><span>100</span>个top10学校 副本</br></th:block></div>
+                </a>
+			</div>
+		</div>
+		<!--喜报数据 end-->
+
+		<div class="m-ad-1">
+			<div class="inner">
+			<a href="signup.html"><img src="img/ad.png" style="height: 125px;"/></a>
+			</div>
+		</div>
+		<!--ad1 end-->
+
+        <a name="f3"></a>
+		<div class="m-school-data" >
+			<div class="title-box"><div class="title-content">儒艺历年<span>院校录取</span>大数据</div></div>
+			<div class="desc-box" th:utext="${enrollSummary}">儒艺多次斩获清华、央美状元，八大美院专业过线总数超过5400+。<br/>本科过线总数超过12000+，18个省联考状元，各省联考总过线人数近万人。</div>
+		</div>
+
+		<div class="school-box">
+			<div class="menu-box">
+				<dl>
+					<dt>各大美院</dt>
+					<dd class="sel" th:each="college:${artColleges}" th:utext="${college.name}" th:class="${collegeStat.first}?'sel'">清华美术学院</dd>
+					<!--<dd>中央美术学院</dd>
+					<dd>中国美术学院</dd>
+					<dd>鲁迅美术学院</dd>
+					<dd>清华美术学院</dd>
+					<dd>中央美术学院</dd>
+					<dd>中国美术学院</dd>
+					<dd>鲁迅美术学院</dd>-->
+				</dl>
+				<dl>
+					<dt>其他院校</dt>
+					<dd th:each="college:${otherColleges}" th:utext="${college.name}">清华美术学院</dd>
+					<!--<dd>中央美术学院</dd>
+					<dd>中国美术学院</dd>
+					<dd>鲁迅美术学院</dd>
+					<dd>清华美术学院</dd>
+					<dd>中央美术学院</dd>
+					<dd>中国美术学院</dd>-->
+				</dl>
+			</div>
+
+            <!--有多少个 dd 就绑定 多少组右侧内容区域，这里只做前3个点击后显示数据效果-->
+
+            <!-- 第 1 个dd选中后右侧显示的内容 -->
+			<div class="sy_one" th:each="college:${colleges}" th:style="${!collegeStat.first}?'display:none'">
+            	<div class="top">
+                	<div class="school-name">
+                    	<th:block th:utext="${college.name}">清华美术学院</th:block><br>
+                    	<span th:utext="${college.aliasName}">Tsinghua Academy of Fine Arts</span>
+                    </div>
+					<th:block th:utext="${college.remark}">2019斩获清华美院合格证<span>149</span>张 / 设计类合格证 <br/>
+						应届生斩获合格证<span>128</span>张，总量名列前茅</th:block>
+                </div>
+                <div class="demo">
+                    <ul class="report-box">
+                        <li th:each="successCase:${college.successCases}">
+                            <img src="img/index-5.png" class="img" th:src="${successCase.pcPhotoUrl}"/>
+                            <div class="name" th:utext="${successCase.studentName}">王 * 月</div>
+                            <div class="desc" th:utext="${successCase.title}">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <!--<li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>-->
+                    </ul>
+                </div>
+			</div>
+
+
+            <!--第 2 个dd选中-->
+			<!--<div class="sy_one" style="display:none">
+            	<div class="top">
+                	<div class="school-name">
+                    	中央美术学院<br>
+                    	<span>Tsinghua Academy of Fine Arts</span>
+                    </div>
+                    2019斩获清华美院合格证<span>149</span>张 / 设计类合格证 <br/>
+                    应届生斩获合格证<span>128</span>张，总量名列前茅
+                </div>
+                <div class="demo">
+                    <ul class="report-box">
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                    </ul>
+                </div>
+			</div>-->
+
+            <!--第 3 个dd选中-->
+			<!--<div class="sy_one" style="display:none">
+            	<div class="top">
+                	<div class="school-name">
+                    	第3个分类选中的名称<br>
+                    	<span>Tsinghua Academy of Fine Arts</span>
+                    </div>
+                    2019斩获清华美院合格证<span>149</span>张 / 设计类合格证 <br/>
+                    应届生斩获合格证<span>128</span>张，总量名列前茅
+                </div>
+                <div class="demo">
+                    <ul class="report-box">
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                    </ul>
+                </div>
+			</div>-->
+
+            <!--第 4 个dd选中-->
+			<!--<div class="sy_one" style="display:none">
+            	<div class="top">
+                	<div class="school-name">
+                    	第4个分类选中的名称<br>
+                    	<span>Tsinghua Academy of Fine Arts</span>
+                    </div>
+                    2019斩获清华美院合格证<span>149</span>张 / 设计类合格证 <br/>
+                    应届生斩获合格证<span>128</span>张，总量名列前茅
+                </div>
+                <div class="demo">
+                    <ul class="report-box">
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                    </ul>
+                </div>
+			</div>-->
+
+            <!--第 5个dd选中-->
+			<!--<div class="sy_one" style="display:none">
+            	<div class="top">
+                	<div class="school-name">
+                    	第5个分类选中的名称<br>
+                    	<span>Tsinghua Academy of Fine Arts</span>
+                    </div>
+                    2019斩获清华美院合格证<span>149</span>张 / 设计类合格证 <br/>
+                    应届生斩获合格证<span>128</span>张，总量名列前茅
+                </div>
+                <div class="demo">
+                    <ul class="report-box">
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                    </ul>
+                </div>
+			</div>-->
+
+            <!--第 6个dd选中-->
+			<!--<div class="sy_one" style="display:none">
+            	<div class="top">
+                	<div class="school-name">
+                    	第6个分类选中的名称<br>
+                    	<span>Tsinghua Academy of Fine Arts</span>
+                    </div>
+                    2019斩获清华美院合格证<span>149</span>张 / 设计类合格证 <br/>
+                    应届生斩获合格证<span>128</span>张，总量名列前茅
+                </div>
+                <div class="demo">
+                    <ul class="report-box">
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                        <li>
+                            <img src="img/index-5.png" class="img"/>
+                            <div class="name">王 * 月</div>
+                            <div class="desc">斩获清华美术学院工艺美术专业全国第32名</div>
+                        </li>
+                    </ul>
+                </div>
+			</div>-->
+
+		</div>
+		<!--学校数据 end-->
+
+        <a name="f1"></a>
+		<div class="m-about">
+			<div class="title-box">关于儒艺</div>
+			<div class="about-box">
+            	<ul class="sy_type clearfix">
+                    <a class="active">儒艺简介</a>
+                    <a>团队活动</a>
+                    <a>儒艺环境</a>
+                    <a style="margin-right: 0;">联系我们</a>
+                </ul>
+
+                <!--儒艺简介-->
+            	<div class="sy_two">
+                    <div class="video-box">
+                        <video style="width:100%; height:100%" controls>
+                            <source src="http://minkbooks.com/content/trailer.mp4" th:src="${aboutVideo}">
+                        </video>
+                    </div>
+                    <div class="about-desc">
+                        <div class="detail-box">
+                            <img src="img/index-13.png" class="name"/>
+                            <div class="content" th:utext="${aboutIntro}">随着我国人口增长、消费结构不断升级和资源环境承载能力趋紧，粮食产需仍将维持紧平衡态势。新冠肺炎疫情全球大流行，国际农产品市场供给不确定性增加，必须以稳定国内粮食生产来应对国际形势变化带来的不确定性。各地区各部门要始终绷紧国家粮食安全这根弦，把稳定粮食生产作为农业供给侧结构性改革的前提，着力稳政策、稳面积、稳产量，坚持耕地管控、建设、激励多措并举，不断巩固提升粮食综不断巩固提升粮食综不断巩固提升粮食综不断巩固提升粮食综</div>
+                            <a href="about.html" class="more">更多></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--团队活动-->
+            	<div class="sy_two" style="display:none">
+                    <ul class="ul_hd">
+                    	<li th:each="item:${aboutActivity}"><img src="img/003.png" th:src="${item}"></li>
+                    	<!--<li><img src="img/003.png"></li>
+                    	<li><img src="img/003.png"></li>
+                    	<li><img src="img/003.png"></li>
+                    	<li><img src="img/003.png"></li>
+                    	<li><img src="img/003.png"></li>
+                    	<li><img src="img/003.png"></li>
+                    	<li><img src="img/003.png"></li>-->
+                    </ul>
+                </div>
+
+                <!--儒艺环境-->
+            	<div class="sy_two" style="display:none">
+                    <ul class="ul_hd">
+                    	<li th:each="item:${aboutEnv}"><img src="img/010.jpg" th:src="${item}"></li>
+                    	<!--<li><img src="img/010.jpg"></li>
+                    	<li><img src="img/010.jpg"></li>
+                    	<li><img src="img/010.jpg"></li>
+                    	<li><img src="img/010.jpg"></li>
+                    	<li><img src="img/010.jpg"></li>
+                    	<li><img src="img/010.jpg"></li>
+                    	<li><img src="img/010.jpg"></li>-->
+                    </ul>
+                </div>
+
+                <!--联系我们-->
+            	<div class="sy_two" style="display:none">
+                    <div class="left">
+                    	<div class="top1">
+                        	<p>儒艺教育 北京校区</p>
+                        	<p>主教学区：北京市房山区良乡东路华学书院  （大学城隔壁）</p>
+                        	<p>一校区：北京市海淀区农大南路树村郊野公园16号院 （距离北大、清华、5公里）</p>
+                        	<p>二校区：北京市大兴区芦花路临22号董陶窑陶瓷制作研究所</p>
+                        </div>
+                    	<p class="p2">专业课老师：13155463372</p>
+                        <p class="p3">邮箱：1315546337@qq.com</p>
+                        <p class="p4"><span>服务热线</span>400-9973-993</p>
+                    </div>
+                    <div class="dt" id="dituContent"></div>
+					<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+                    <script src="js/map.js"></script>
+                </div>
+
+			</div>
+		</div>
+		<!--about end-->
+
+		<div class="c-section c-section-1">
+			<div class="title-box">
+				<div class="name">校园环境</div>
+				<ul class="tab-title">
+					<li class="tab-title-item active">少儿美术</li>
+					<li class="tab-title-item">统招艺考</li>
+					<li class="tab-title-item">陶瓷艺术</li>
+				</ul>
+				<a href="meishuHuanJing.html" class="more">更多></a>
+				<a href="yikaoHuanJing.html" class="more" style="display:none">更多></a>
+				<a href="taociHuanJing.html" class="more" style="display:none">更多></a>
+			</div>
+			<div class="content-box">
+				<div class="tab-content">
+					<div class="tab-content-item clearfix" style="display: block;">
+						<ul class="box-4 left">
+							<li th:each="item:${envChildrenArtLeft}"><a><img src="img/thumb.png" th:src="${item}"/></a></li>
+							<!--<li><a><img src="img/thumb.png"/></a></li>
+							<li><a><img src="img/thumb.png"/></a></li>
+							<li><a><img src="img/thumb.png"/></a></li>-->
+						</ul>
+						<a class="box-1 right"><img src="img/thumb.png" th:src="${envChildrenArtRight}"></a>
+					</div>
+                    <div class="tab-content-item clearfix">
+						<ul class="box-4 left">
+							<li th:each="item:${envSkillTestLeft}"><a><img src="img/006.png" th:src="${item}"/></a></li>
+							<!--<li><a><img src="img/006.png"/></a></li>
+							<li><a><img src="img/006.png"/></a></li>
+							<li><a><img src="img/006.png"/></a></li>-->
+						</ul>
+						<a class="box-1 right"><img src="img/thumb.png" th:src="${envSkillTestRight}"></a>
+					</div>
+                    <div class="tab-content-item clearfix">
+						<ul class="box-4 left">
+							<li th:each="item:${envCeramicArtLeft}"><a><img src="img/thumb.png" th:src="${item}"/></a></li>
+							<!--<li><a><img src="img/thumb.png"/></a></li>
+							<li><a><img src="img/thumb.png"/></a></li>
+							<li><a><img src="img/006.png"/></a></li>-->
+						</ul>
+						<a class="box-1 right"><img src="img/006.png" th:src="${envCeramicArtRight}"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--校区环境 end-->
+
+        <a name="f4"></a>
+		<div class="c-section c-section-2">
+			<div class="title-box">
+				<div class="name">儒艺名师</div>
+				<ul class="tab-title">
+					<li class="tab-title-item active">少儿美术</li>
+					<li class="tab-title-item">统招艺考</li>
+					<li class="tab-title-item">陶瓷艺术</li>
+				</ul>
+				<a href="meishuMingShi.html" class="more">更多></a>
+				<a href="yikaoMingShi.html" class="more" style="display:none">更多></a>
+				<a href="taociDaShi.html" class="more" style="display:none">更多></a>
+			</div>
+			<div class="content-box">
+				<div class="tab-content">
+					<div class="tab-content-item clearfix" style="display: block;" th:each="teachers: ${teachersList}" th:style="${teachersStat.first}?'display: block;'">
+						<ul class="box-teacher clearfix">
+							<li th:each="teacher: ${teachers}">
+								<a href="meishuMingShi.html" th:href="|meishuMingShi.html?id=${teacher.id}|">
+									<img src="img/thumb.png" th:src="${teacher.pcPhotoUrl}"/>
+									<p class="name" th:utext="${teacher.name}">李刚</p>
+									<p class="desc" th:utext="${teacher.intro}">儒艺教育总校长</p>
+								</a>
+							</li>
+							<!--<li>
+								<a href="meishuMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="meishuMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="meishuMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="meishuMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>-->
+						</ul>
+					</div>
+					<!--<div class="tab-content-item clearfix">
+						<ul class="box-teacher clearfix">
+							<li>
+								<a href="yikaoMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+							<li>
+								<a href="yikaoMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="yikaoMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="yikaoMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="yikaoMingShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-content-item clearfix">
+						<ul class="box-teacher clearfix">
+							<li>
+								<a href="taociDaShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="taociDaShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="taociDaShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="taociDaShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+                            <li>
+								<a href="taociDaShi.html">
+									<img src="img/thumb.png"/>
+									<p class="name">李刚</p>
+									<p class="desc">儒艺教育总校长</p>
+								</a>
+							</li>
+						</ul>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<!--儒艺名师 end-->
+
+		<div class="c-section c-section-3">
+			<div class="title-box">
+				<div class="name">学生作品</div>
+				<ul class="tab-title">
+					<li class="tab-title-item active">少儿美术</li>
+					<li class="tab-title-item">统招艺考</li>
+					<li class="tab-title-item">陶瓷艺术</li>
+				</ul>
+				<a href="meishuZhuoPin.html" class="more">更多></a>
+				<a href="yikaoZuoPin.html" class="more" style="display:none">更多></a>
+				<a href="taociZuoPin.html" class="more" style="display:none">更多></a>
+			</div>
+			<div class="content-box">
+				<div class="tab-content">
+					<div class="tab-content-item clearfix" style="display: block;">
+						<ul class="box-4 left">
+							<li th:each="item:${workChildrenArtLeft}"><a href="#"><img src="img/thumb.png" th:src="${item}"/></a></li>
+							<!--<li><a><img src="img/thumb.png"/></a></li>
+							<li><a><img src="img/thumb.png"/></a></li>
+							<li><a><img src="img/thumb.png"/></a></li>-->
+						</ul>
+						<a class="box-1 right"><img src="img/thumb.png" th:src="${workChildrenArtRight}"></a>
+					</div>
+                    <div class="tab-content-item clearfix">
+						<ul class="box-4 left">
+							<li th:each="item:${workSkillTestLeft}"><a><img src="img/006.png" th:src="${item}"/></a></li>
+							<!--<li><a><img src="img/006.png"/></a></li>
+							<li><a><img src="img/006.png"/></a></li>
+							<li><a><img src="img/006.png"/></a></li>-->
+						</ul>
+						<a class="box-1 right"><img src="img/thumb.png" th:src="${workSkillTestRight}"></a>
+					</div>
+                    <div class="tab-content-item clearfix">
+						<ul class="box-4 left">
+							<li th:each="item:${workCeramicArtLeft}"><a><img src="img/thumb.png" th:src="${item}"/></a></li>
+							<!--<li><a><img src="img/thumb.png"/></a></li>
+							<li><a><img src="img/thumb.png"/></a></li>
+							<li><a><img src="img/006.png"/></a></li>-->
+						</ul>
+						<a class="box-1 right"><img src="img/006.png" th:src="${workCeramicArtRight}"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--学生作品 end-->
+
+		<div class="c-section c-section-4">
+			<div class="title-box">
+				<div class="name">优秀毕业生</div>
+				<a href="liuxueAnLi.html" class="more">更多></a>
+			</div>
+			<div class="content-box">
+				<div class="student-box clearfix">
+					<div class="item-box clearfix" th:each="student:${studyArticles}">
+						<img src="img/thumb.png" th:src="${student.coverUrl}"/>
+						<div class="info-box">
+							<p class="name" th:utext="${student.title}">优秀毕业生</p>
+							<p class="desc" th:utext="${student.intro}">就读于清华美术学院</p>
+						</div>
+					</div>
+					<!--<div class="item-box clearfix">
+						<img src="img/thumb.png"/>
+						<div class="info-box">
+							<p class="name">优秀毕业生</p>
+							<p class="desc">就读于清华美术学院</p>
+						</div>
+					</div>
+					<div class="item-box clearfix">
+						<img src="img/thumb.png"/>
+						<div class="info-box">
+							<p class="name">优秀毕业生</p>
+							<p class="desc">就读于清华美术学院</p>
+						</div>
+					</div>
+					<div class="item-box clearfix">
+						<img src="img/thumb.png"/>
+						<div class="info-box">
+							<p class="name">优秀毕业生</p>
+							<p class="desc">就读于清华美术学院</p>
+						</div>
+					</div>
+					<div class="item-box">
+						<img src="img/thumb.png"/>
+						<div class="info-box">
+							<p class="name">优秀毕业生</p>
+							<p class="desc">就读于清华美术学院</p>
+						</div>
+					</div>
+					<div class="item-box">
+						<img src="img/thumb.png"/>
+						<div class="info-box">
+							<p class="name">优秀毕业生</p>
+							<p class="desc">就读于清华美术学院</p>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<!--优秀毕业生 end-->
+
+		<div class="c-section">
+			<div class="title-box">
+				<div class="name">合作单位</div>
+				<!--<a href="#" class="more">更多></a>-->
+			</div>
+			<div class="content-box">
+				<div class="partner-box">
+					<div class="partner-box-1">
+						<img src="img/p-1.png" th:each="item:${partnerUp}" th:src="${item}">
+						<!--<img src="img/p-2.png">
+						<img src="img/p-3.png">
+						<img src="img/p-4.png">
+						<img src="img/p-5.png">
+						<img src="img/p-6.png">
+						<img src="img/p-7.png">
+						<img src="img/p-8.png">-->
+					</div>
+					<div class="partner-box-1">
+						<img src="img/p-9.png" th:each="item:${partnerDown}" th:src="${item}">
+						<!--<img src="img/p-10.png">-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--合作单位 end-->
+
+        <a name="f2"></a>
+		<div class="m-advantage">
+			<div class="title-box"><div class="title-content">为什么选择<span>儒艺教育</span></div></div>
+			<div class="desc-box">细数儒艺教育的6大优势</div>
+			<div class="content-box clearfix">
+				<div class="item-box">
+					<img src="img/1.png"/>
+					<p class="name">量身定制目标教学</p>
+					<p class="desc">量身定制学生专属学习规划，针对学生目标阶段性教学</p>
+				</div>
+				<div class="item-box">
+					<img src="img/3.png"/>
+					<p class="name">建立数据追踪档案</p>
+					<p class="desc">全科目教师实时记录，随时查漏补缺，完善备考计划</p>
+				</div>
+				<div class="item-box">
+					<img src="img/2.png"/>
+					<p class="name">全方位一体化服务</p>
+					<p class="desc">全程VIP指导服务，不同阶段专业老师层层把关，考前考后全方位保障</p>
+				</div>
+				<div class="item-box">
+					<img src="img/4.png"/>
+					<p class="name">数字化智能教学</p>
+					<p class="desc">数字化多媒体教学，数百套教学视频同步传达，提升学习效率</p>
+				</div>
+				<div class="item-box">
+					<img src="img/5.png"/>
+					<p class="name">文化+专业同步提升</p>
+					<p class="desc">教研团队针对性研发美考文化课，一课一研的教学模式，让文化课轻松提分</p>
+				</div>
+				<div class="item-box">
+					<img src="img/6.png"/>
+					<p class="name">德育励志助力成长</p>
+					<p class="desc">培养学生良好价值观，让学生的成绩与综合素质全面发展</p>
+				</div>
+			</div>
+		</div>
+		<!--优势 end-->
+
+		<div class="m-footer">
+			<div class="sign-up">
+				<div class="sign-up-form clearfix">
+					<div class="item-box clearfix">
+						<label class="icon-username"></label>
+						<input type="text" class="text-input" placeholder="请输入姓名"/>
+					</div>
+					<div class="item-box clearfix">
+						<label class="icon-phone"></label>
+						<input type="text" class="text-input" placeholder="请输入手机号"/>
+					</div>
+					<div class="submit-bnt">在线报名</div>
+				</div>
+			</div>
+			<div class="footer-box ">
+				<div class="inner clearfix">
+				<div class="f-box-1 left">
+					<div class="f-title">客服热线</div>
+					<div class="phone-box" th:utext="${contact}">400-9973-993</div>
+					<div class="phone-time" th:utext="${workTime}">周一至每周日08:30-22:30</div>
+				</div>
+				<div class="f-box-2 left">
+					<div class="f-title">关于儒艺</div>
+					<div class="f-nav">
+						<a href="about.html">关于我们</a>
+						<a href="meishu.html">少儿美术</a>
+						<a href="index.html#f1">关于儒艺</a>
+						<a href="yikao.html">统招艺考</a>
+						<a href="index.html#f2">儒艺优势</a>
+						<a href="liuxue.html">出国留学</a>
+						<a href="index.html#f3">儒艺战绩</a>
+						<a href="yikao.html">陶瓷艺术</a>
+						<a href="index.html#f4">儒艺名师</a>
+					</div>
+				</div>
+				<div class="f-box-3 left">
+					<div class="f-title">联系我们</div>
+					<div class="address-box">
+						<p>主教学区：北京市房山区良乡东路华学书院  （大学城隔壁）</p>
+						<p>一校区：北京市海淀区农大南路树村郊野公园16号院 （距离北大、清华、5公里）</p>
+						<p>二校区：北京市大兴区芦花路临22号董陶窑陶瓷制作研究所 </p>
+					</div>
+					<div class="wx-box clearfix">
+						<a href="contact.html"><div class="item-box" >儒艺教育客服</div></a>
+						<a href="contact.html"><div class="item-box" >专业课老师</div></a>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="copy-right" th:utext="${copyRight}">版权信息版权信息版权信息版权信息版权信息版权信息</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript">
+	$(function(){
+		$('.demo').eq(0).myScroll({
+			speed: 30, //数值越大，速度越慢
+			rowHeight: 315 //li的高度
+		});
+
+		$(".menu-box dd").click(function(){
+			$(".menu-box dd").removeClass("sel");
+			$(this).addClass("sel");
+			var i=$(".menu-box dd").index(this);
+			$(".sy_one").hide();
+			$(".sy_one").eq(i).show();
+		})
+		$(".menu-box dd").click(function(){
+			var i=$(".menu-box dd").index(this);
+			$('.demo').eq(i).find("ul").css("margin-top",0);
+			$('.demo').eq(i).myScroll({
+				speed: 30, //数值越大，速度越慢
+				rowHeight: 315 //li的高度
+			});
+		})
+
+	});
+	</script>
+
+	<script type="text/javascript" src="js/common.js" ></script>
+   	<script src="js/scroll.js"></script>
+
+    <!--提交成功弹框-->
+    <div class="tan_bm" style="display:none">
+        <h2>报名成功</h2>
+        <h6>稍后客服将会和您联系</h6>
+        <p class="p_btn">
+            <input type="button" class="btn quxiao" value="取消">
+            <input type="button" class="btn btn_qd" value="确认">
+        </p>
+    </div>
+    <script src="js/layer/layer.js"></script>
+    <script type="text/javascript">
+    $(function(){
+		//弹框
+		$(".btn_tj,.submit-bnt").click(function(){
+			layer.open({
+				type: 1,
+				title: false,
+				closeBtn: 0,
+				area: ['auto', 'auto'],
+				shade : [0.6 , '#000' , false],
+				skin: 'layui-layer-nobg', //没有背景色
+				shadeClose: false,
+				closeBtn:0,
+				content: $(".tan_bm")
+			});
+			return false;
+		})
+		$(".quxiao,.btn_qd").click(function(){
+			layer.closeAll();
+		})
+	})
+    </script>
+
+
+	<script type="text/javascript" src="js/backend/common.js" ></script>
+	<script type="text/javascript" src="js/backend/registration.js" ></script>
+</html>

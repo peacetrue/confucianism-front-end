@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="header" class="m-header ">
+    <div class="inner clearfix">
+        <a href="#" class="logo">
+            <img src="img/logo.png" th:src="${logo}"/>
+        </a>
+        <div class="tip-message" th:utext="${slogan}">您与名校只差一个选择</div>
+    </div>
+</div>
+<div th:fragment="nav (name)" class="m-nav ">
+    <div class="inner clearfix">
+        <div class="nav-box clearfix">
+            <a href="index.html" th:class="${name}=='首页'?'active'">首页</a>
+            <a href="about.html" th:class="${name}=='关于我们'?'active'">关于我们</a>
+            <a href="notice.html" th:class="${name}=='通知公告'?'active'">通知公告</a>
+            <a href="meishu.html" th:class="${name}=='少儿美术'?'active'">少儿美术</a>
+            <a href="liuxue.html" th:class="${name}=='出国留学'?'active'">出国留学</a>
+            <a href="yikao.html" th:class="${name}=='统招艺考'?'active'">统招艺考</a>
+            <a href="taoci.html" th:class="${name}=='陶瓷艺术'?'active'">陶瓷艺术</a>
+            <a href="signup.html" th:class="${name}=='在线报名'?'active'">在线报名</a>
+            <a href="contact.html" th:class="${name}=='联系我们'?'active'">联系我们</a>
+        </div>
+        <div class="h_tell" th:utext="${contact}">400-9973-993</div>
+    </div>
+</div>
+<div th:fragment="banner (name)" class="bannerTitle" style="background:url(img/img3.png) no-repeat top center; background-size:auto 100%" th:style="'background:url('+${cover}+') no-repeat top center; background-size:auto 100%'">
+    <div class="main" th:utext="${name}+'<br/>\n'+${aliasName}">
+        在线报名<br>
+        SIGN UP
+    </div>
+</div>
+
+
+<th:block th:fragment="headerIndex (name)">
+    <!--header start-->
+    <div class="m-header ">
+        <div class="inner clearfix">
+            <a href="#" class="logo">
+                <img src="img/logo.png" th:src="${logo}"/>
+            </a>
+            <div class="tip-message" th:utext="${slogan}">您与名校只差一个选择</div>
+        </div>
+    </div>
+    <div class="m-nav ">
+        <div class="inner clearfix">
+            <div class="nav-box clearfix">
+                <a href="index.html" th:class="${name}=='首页'?'active'">首页</a>
+                <a href="about.html" th:class="${name}=='关于我们'?'active'">关于我们</a>
+                <a href="notice.html" th:class="${name}=='通知公告'?'active'">通知公告</a>
+                <a href="meishu.html" th:class="${name}=='少儿美术'?'active'">少儿美术</a>
+                <a href="liuxue.html" th:class="${name}=='出国留学'?'active'">出国留学</a>
+                <a href="yikao.html" th:class="${name}=='统招艺考'?'active'">统招艺考</a>
+                <a href="taoci.html" th:class="${name}=='陶瓷艺术'?'active'">陶瓷艺术</a>
+                <a href="signup.html" th:class="${name}=='在线报名'?'active'">在线报名</a>
+                <a href="contact.html" th:class="${name}=='联系我们'?'active'">联系我们</a>
+            </div>
+            <div class="h_tell" th:utext="${contact}">400-9973-993</div>
+        </div>
+    </div>
+    <!--header end-->
+</th:block>
+<th:block th:fragment="header (name,aliasName)">
+    <th:block th:replace="~{:: headerIndex (name)}"/>
+    <!--标题banner 与 位置 start-->
+    <div class="bannerTitle" style="background:url(img/img3.png) no-repeat top center; background-size:auto 100%" th:style="'background:url('+${cover}+') no-repeat top center; background-size:auto 100%'">
+        <div class="main" th:utext="${name}+'<br/>\n'+${aliasName}">
+            在线报名<br>
+            SIGN UP
+        </div>
+    </div>
+    <div class="wei">
+        <div class="main">
+            <span class="left" th:utext="'首页 / '+${name}">首页 / 在线报名</span>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

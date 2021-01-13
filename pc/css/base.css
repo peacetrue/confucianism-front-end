@@ -1,0 +1,244 @@
+/* CSS Document */
+*{ margin:0; padding:0;color:#5a5a5a;;}
+body,input,select{ font-size:14px; font-family: "Microsoft YaHei", 微软雅黑; background:#fff;}
+ul{ list-style:none;}
+a{ text-decoration:none; color:#5a5a5a;}
+img { border:none;}
+.left{ float:left;}
+.right{ float:right;}
+input,select{ outline:none;}
+.red{ color:red;}
+
+
+/* Clear Fix */
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{ display:inline-block;}
+/* Hide from IE Mac */
+.clearfix {display:block;}
+/* End hide from IE Mac */
+/* end of clearfix */
+
+.inner{
+	width: 1168px;
+	margin: 0 auto;
+}
+
+
+.tab-title li.active{
+	color: red;
+}
+.tab-content .tab-content-item{
+	display: none;
+}
+
+
+
+.m-header{
+	padding-top: 20px;
+	background: #FFFFFF;
+}
+.m-header .logo{
+	float: left;
+	display: block;
+	width: 118px;
+	height: 84px;
+}
+.m-header .logo img{
+	display: block;
+	width: 118px;
+	height: 84px;
+}
+
+.m-header .tip-message{
+	float: right;
+	height: 44px;
+	line-height: 44px;
+	font-size: 14px;
+	color: #000000;
+	padding-top: 40px;
+}
+
+.m-nav{
+	background: #FFFFFF;
+}
+
+.m-nav .nav-box{
+	float: left;
+	height: 56px;
+}
+.m-nav .nav-box a{
+	float: left;
+	height:56px;
+	line-height: 56px; margin-right:30px;
+	font-size: 16px;
+	color: #333333;
+}
+.m-nav .nav-box a.active{
+	color: #ff4025;
+}
+
+.search-box{
+	margin-top: 11px;
+	float: right;
+	border: 1px solid #ff4025;
+	width: 258px;
+	height: 30px;
+}
+
+.h_tell{ float:right; padding-right:50px; background:url(../img/bg_01.png) no-repeat right center; font-size:20px; padding-right:50px; line-height:32px; margin-top:10px; position:relative; z-index:1111;}
+
+.search-box .search-input{
+	display: block;
+	width: 226px;
+	height: 30px;
+	float: left;
+	border: none;
+	text-indent: 10px;
+}
+.search-box .search-bnt{
+	display: block;
+	width: 32px;
+	height: 30px;
+	float: right;
+	background:url(../img/index-7.png) center no-repeat #ff4025;
+	border: none;
+	cursor: pointer;
+}
+
+
+.m-footer{
+	background: #292929; float:left; width:100%
+}
+.m-footer .sign-up{
+	width: 1168px;
+	margin: 0 auto;
+	height: 34px;
+	padding: 20px 0;
+}
+.m-footer .sign-up .sign-up-form{
+	float: right;
+}
+.m-footer .sign-up .item-box{
+	float: left;
+	margin-right: 11px;
+}
+.m-footer .sign-up .item-box label{
+	float: left;
+	width: 39px;
+	height: 34px;
+	border-right:1px solid #999999;
+	background: #FFFFFF;
+}
+.m-footer .sign-up .item-box .text-input{
+	float: left;
+	width: 200px;
+	height: 34px;
+	border: none;
+	text-indent: 10px;
+}.m-footer .sign-up .item-box .icon-username{
+	background: url(../img/index-8.png) center no-repeat #FFFFFF;
+}
+.m-footer .sign-up .item-box .icon-phone{
+	background: url(../img/index-9.png) center no-repeat #FFFFFF;
+}
+
+.m-footer .sign-up .submit-bnt{
+	float: left;
+	width: 96px;
+	height: 34px;
+	background:url(../img/index-10.png) 12px center no-repeat #ff4025;
+	text-indent: 30px;
+	font-size: 14px;
+	color: #ffffff;
+	line-height: 34px;
+	cursor: pointer;
+}
+
+.m-footer .footer-box{
+	background: #333333;
+	padding-bottom: 20px;
+}
+
+.m-footer .footer-box .f-title{
+	height: 60px;
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 60px;
+	position: relative;
+	margin-bottom: 15px;
+}
+.m-footer .footer-box .f-title:after{
+	position: absolute;
+	content: ' ';
+	width: 26px;
+	height: 3px;
+	background: #ff4025;
+	bottom: 0;
+	left: 0;
+}
+
+
+.m-footer .copy-right{
+	height: 55px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 55px;
+	color: #999;
+}
+
+.m-footer .f-box-1{
+	width: 307px;
+}
+
+.m-footer .f-box-1 .phone-box{
+	height: 34px;
+	line-height: 34px;
+	color: #ffffff;
+	font-size: 24px;
+	padding-left: 56px;
+	background: url(../img/index-12.png) left center no-repeat;
+}
+.m-footer .f-box-1 .phone-time{
+	font-size: 14px;
+	color: #999999;
+	margin-top: 20px;
+}
+.m-footer .f-box-2{
+	width: 230px;
+	margin-right: 60px;
+}
+
+.m-footer .f-box-2 a{
+	margin-right: 54px;
+	color: #999999;
+	font-size: 14px;
+	line-height: 25px;
+	word-break: break-all;
+}
+
+.m-footer .f-box-3{
+	width: 518px;
+}
+.m-footer .f-box-3 .address-box{
+	line-height: 25px;
+	font-size: 14px;
+}
+.m-footer .f-box-3 .address-box p{
+	color: #999999;
+}
+
+.m-footer .wx-box{
+	margin-top: 20px;
+}
+.m-footer .wx-box .item-box{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #999999;
+	padding-left: 60px;
+	background: url(../img/index-11.png) left center no-repeat;
+	margin-right: 36px;
+}
+
+
