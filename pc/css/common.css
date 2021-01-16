@@ -5,10 +5,10 @@ body{ background:#F6F6F6}
 .bannerTitle{ float:left; width:100%; height:200px; margin-bottom:20px;}
 .bannerTitle .main{ color:#fff; font-size:30px; line-height:44px; padding-top:55px; padding-left:25px; box-sizing:border-box}
 .wei{ float:left; width:100%; background:url(../img/bg_02.png) repeat-x left bottom #fff; padding-bottom:5px; margin-bottom:40px; padding-top:20px; margin-top:-20px;}
-.wei a:hover{ color:#ff4025;}
+.wei a:hover{ color:#ff4025 !important;}
 .wei .left{ float:left; min-width:200px; border-top:2px solid #FF4025; line-height:45px; color:#656565; font-size:14px;}
 .bg_white{ float:left; width:100%; background:#fff; margin-bottom:40px; padding:25px; box-sizing:border-box;}
-.gg_one li .title a:hover,.gg_two ul li a:hover h3,.ms_five li a:hover .top{ color:#FF4025;}
+.gg_one li .title a:hover,.gg_two ul li a:hover h3,.ms_five li a:hover .top{ color:#FF4025 !important;}
 .bg .wei{ background:#fff;margin-bottom:0}
 .list_one ul li .desc{-webkit-transition:all 0.6s ease 0s;-moz-transition:all 0.6s ease 0s;transition:all 0.6s ease 0s;}
 .list_one ul li .name,.ms_four li img,.ms_five li .img,.tc_one li .pimg img{-webkit-transition:all 0.8s ease 0s;-moz-transition:all 0.8s ease 0s;transition:all 0.8s ease 0s;}
@@ -47,7 +47,7 @@ body{ background:#F6F6F6}
 /* 联系我们 lx */
 .lx_one{ float:left; width:720px; line-height:28px; color:#333333; font-size:16px;}
 .lx_one h2{ float:left; width:100%; line-height:70px; color:#333333; font-size:28px;}
-.lx_one h2 span{ color:#ff4025;}
+.lx_one h2 span{ color:#ff4025 !important;}
 .lx_one p{ float:left; width:100%;}
 .lx_two{ float:right;}
 .lx_two li{ float:left; text-align:center; color:#333333; font-size:16px;}
@@ -77,7 +77,7 @@ body{ background:#F6F6F6}
 .tan_bm h2{ float:left; width:100%; text-align:center; line-height:34px; color:#FF3F25; font-size:24px; font-weight:normal;}
 .tan_bm h6{ float:left; width:100%; text-align:center; color:#656565; font-size:12px; font-weight:normal; line-height:22px;}
 .tan_bm .p_btn{ float:left; width:100%; text-align:center; padding-top:15px;}
-.tan_bm .btn{ margin:0px 20px; width:100px; height:40px; border:1px solid #FF4025; line-height:38px; border-radius:3px; color:#FF4025; font-size:16px; cursor:pointer; outline:none;}
+.tan_bm .btn{ margin:0px 20px; width:100px; height:40px; border:1px solid #FF4025; line-height:38px; border-radius:3px; color:#FF4025 !important; font-size:16px; cursor:pointer; outline:none;}
 .tan_bm .btn_qd{ background:#FF4025; color:#fff;}
 
 .sel_xz{ float:left; width:320px; height:38px; border:1px solid #DDDDDD; line-height:36px; padding-left:15px; font-size:15px; box-sizing:border-box; cursor:pointer; position:relative;background:url(../img/bg_17.png) no-repeat right center;}
@@ -196,7 +196,7 @@ body{ background:#F6F6F6}
 .tc_four{ float:left; width:100%; padding-left:5px; padding-top:25px; padding-bottom:5px;}
 .tc_four li{ float:left; margin-left:20px; width:210px; height:480px; border-radius:6px; overflow:hidden; margin-bottom:20px;}
 .tc_four li .img{ float:left; width:100%; height:240px; border-radius:6px;}
-.tc_four li .name{ float:left; margin-top:20px;line-height:34px; height:60px; font-size:18px; text-align:center; width:100%; color:#FF4025;}
+.tc_four li .name{ float:left; margin-top:20px;line-height:34px; height:60px; font-size:18px; text-align:center; width:100%; color:#FF4025 !important;}
 .tc_four li .bottom{ float:left; width:100%; height:240px; background:#EFEFEF; border-radius:6px; overflow:hidden;}
 .tc_four li .desc{ float:left; width:100%; font-size:14px; color:#333; line-height:20px; padding:0px 20px; box-sizing:border-box;}
 .tc_four li:hover .bottom{ background:#FF9B29;}
