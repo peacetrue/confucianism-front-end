@@ -20,8 +20,8 @@ class ClassGrade {
         this.container.empty();
         $('.wei>.main>.left').append(data.title);
         $('.sel_xz').attr('data-classGrade-id', data.id).attr('data-registration-id', data.businessTypeId)
-            .find('input').val(data.title).attr('disabled',true);
-        $.tmpl(this.coverLeft, data.pcPhotoLeftUrl.split(',').map(item => ({item}))).appendTo(this.container);
+            .find('input').val(data.title).attr('disabled', true);
+        data.pcPhotoLeftUrl && $.tmpl(this.coverLeft, data.pcPhotoLeftUrl.split(',').map(item => ({item}))).appendTo(this.container);
         $.tmpl(this.coverRight, data).appendTo(this.container);
         this.content.html(data.detail);
     }

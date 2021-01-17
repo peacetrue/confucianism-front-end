@@ -203,9 +203,12 @@
                 <a href="meishuHuanJing.html">更多></a>
             </div>
             <ul class="ms_four">
-            	<li class="li" th:each="item:${teachEnv}">
-                	<img src="img/003.png" th:src="${item}">
+                <li class="li right" th:each="item:${teachEnv}" th:class="${itemStat.index%10!=0}?'right'" th:classappend="${itemStat.index%5==0}?'li'">
+                    <img src="img/003.png" th:src="${item}">
                 </li>
+            	<!--<li class="li" th:each="item:${teachEnv}">
+                	<img src="img/003.png" th:src="${item}">
+                </li>-->
             	<!--<li>
                 	<img src="img/003.png">
                 </li>
@@ -263,9 +266,9 @@
                 <a href="meishuHuoDong.html">更多></a>
             </div>
             <ul class="ms_five">
-            	<li th:each="item:${activitys}">
+            	<li th:each="item:${articles}">
                 	<a href="meishuHuoDongDetails.html" th:href="|meishuHuoDongDetails.html?id=${item.id}|">
-                    	<img src="img/003.png" class="img" th:src="${item.pcPhotoUrl}">
+                    	<img src="img/003.png" class="img" th:src="${item.coverUrl}">
                         <div class="right">
                             <div class="top" th:utext="${item.title}">世界环境日，儿童环境教育基地建设成果展示活动来啦！</div>
                             <div class="desc" th:utext="${item.intro}">

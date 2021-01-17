@@ -122,8 +122,40 @@
 		</div>
         <!--footer end-->
 
+		<script src="js/jquery.min.js"></script>
+		<!--提交成功弹框-->
+		<div class="tan_bm" style="display:none">
+			<h2>报名成功</h2>
+			<h6>稍后客服将会和您联系</h6>
+			<p class="p_btn">
+				<input type="button" class="btn quxiao" value="取消">
+				<input type="button" class="btn btn_qd" value="确认">
+			</p>
+		</div>
+		<script src="js/layer/layer.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//弹框
+				$(".btn_tj,.submit-bnt").click(function(){
+					layer.open({
+						type: 1,
+						title: false,
+						closeBtn: 0,
+						area: ['auto', 'auto'],
+						shade : [0.6 , '#000' , false],
+						skin: 'layui-layer-nobg', //没有背景色
+						shadeClose: false,
+						closeBtn:0,
+						content: $(".tan_bm")
+					});
+					return false;
+				})
+				$(".quxiao,.btn_qd").click(function(){
+					layer.closeAll();
+				})
+			})
+		</script>
 	</body>
-	<script type="text/javascript" src="js/jquery.min.js" ></script>
 
 	<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
 	<script type="text/javascript" src="js/backend/common.js" ></script>

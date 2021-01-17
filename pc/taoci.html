@@ -163,9 +163,9 @@
                 <a href="taociZhuTiYanXue.html">更多></a>
             </div>
             <ul class="tc_one">
-            	<li th:each="item:${researchs}">
+            	<li th:each="item:${articles}">
                 	<a href="taociYanXueDetails.html" th:href="|taociYanXueDetails.html?id=${item.id}|">
-                    	<p class="pimg"><img src="img/003.png" th:src="${item.pcPhotoUrl}"></p>
+                    	<p class="pimg"><img src="img/003.png" th:src="${item.coverUrl}"></p>
                         <h3 th:src="${item.title}">孔庙国学之行</h3>
                     </a>
                 </li>
