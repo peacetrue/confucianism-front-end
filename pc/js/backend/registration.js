@@ -4,7 +4,7 @@ class Registration {
 
         this.form = $(this.options.form);
         if (this.form.length === 0) return this;
-
+        console.info("form:", this.options.form, this.form);
         this.name = this.form.find(this.options.name);
         this.age = this.form.find(this.options.age);
         this.phone = this.form.find(this.options.phone);
@@ -71,21 +71,23 @@ Registration.classGradeOptions = {
     name: 'input[type=text]:eq(0)',
     age: 'input[type=text]:eq(1)',
     phone: 'input[type=text]:eq(2)',
-    email: 'input[type=text]:eq(4)',
-    submit: '.btn.btn_tj',
+    type: '.sel_xz',
+    classGrade: '.sel_xz',
+    email: 'input[type=text]:eq(3)',
+    submit: '.btn_tj'
     // successMessage: '报名成功'
 }
 
 Registration.options = {
     ...window.backend,
-    form: '.bm_table',
+    form: '.main .bg_white .bm_table',
     name: 'input[type=text]:eq(0)',
     age: 'input[type=text]:eq(1)',
     phone: 'input[type=text]:eq(2)',
     type: '.sel_xz',
     classGrade: '.sel_xz',
     email: 'input[type=text]:eq(3)',
-    submit: '.btn_tj'
+    submit: '.btn.btn_tj',
 }
 
 $(() => {

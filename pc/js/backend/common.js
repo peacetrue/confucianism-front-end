@@ -1,6 +1,6 @@
 window.backend = {
-    // host: 'http://localhost:8111',
-    host: 'http://101.200.133.86:8111',
+    host: 'http://localhost:8111',
+    // host: 'http://101.200.133.86:8111',
 }
 
 class Template {

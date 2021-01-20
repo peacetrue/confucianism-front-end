@@ -24,8 +24,8 @@
                     <a href="about.html">关于我们</a>
                     <a href="notice.html">通知公告</a>
                     <a href="meishu.html">少儿美术</a>
-                    <a href="liuxue.html">出国留学</a>
                     <a href="yikao.html">统招艺考</a>
+                    <a href="liuxue.html">出国留学</a>
                     <a href="taoci.html">陶瓷艺术</a>
                     <a href="signup.html" class="active">在线报名</a>
                     <a href="contact.html">联系我们</a>
@@ -71,7 +71,7 @@
                         <td>
                         	<p class="sel_xz">请选择</p>
                             <ul class="div_la">
-                            	<li th:each="registration: ${registrationClassGrades}" th:data-registration-id="${registration.id}"><th:block th:text="${registration.name}">少儿美术</th:block><i></i>
+                            	<li th:each="registration: ${registrationClassGrades}" th:data-registration-id="${registration.id}"><th:block th:text="${registration.name}">少儿美术</th:block><th:block th:if="${registration.children!=null&&#lists.size(registration.children)>0}"><i></i>
                                 	<p>
                                     	<span th:each="item: ${registration.children}" th:text="${item.name}" th:data-registration-id="${registration.id}" th:data-classGrade-id="${item.id}">米罗涂鸦班</span>
                                     	<!--<span>毕加索创意班</span>
@@ -81,7 +81,7 @@
                                     	<span>美院班</span>
                                     	<span>国画书法班</span>
                                     	<span>高端科目托管班</span>-->
-                                    </p>
+                                    </p></th:block>
                                 </li>
                             	<!--<li>统招艺考<i></i>
                                 	<p>

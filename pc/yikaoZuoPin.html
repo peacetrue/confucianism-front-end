@@ -59,7 +59,7 @@
                 <!--素描静物-->
                 <ul class="tc_three" th:each="area: ${areas}" th:style="${!areaStat.first}?'display:none'">
                 	<!--li加上样式 class="li" 说明是高的图片-->
-                	<li class="li" th:each="item: ${area.content}" th:class="${itemStat.index%10==0}?'right'" th:classappend="${itemStat.index%5==0}?'li'">
+                	<li class="li" th:each="item: ${area.content}" th:class="${itemStat.index%12<4}?'li'">
                     	<p class="pimg"><img src="img/003.png" th:src="${item}"></p>
                     </li>
                 	<!--<li class="li">

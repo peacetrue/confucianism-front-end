@@ -25,8 +25,8 @@
                     <a href="about.html">关于我们</a>
                     <a href="notice.html">通知公告</a>
                     <a href="meishu.html">少儿美术</a>
-                    <a href="liuxue.html">出国留学</a>
                     <a href="yikao.html">统招艺考</a>
+                    <a href="liuxue.html">出国留学</a>
                     <a href="taoci.html" class="active">陶瓷艺术</a>
                     <a href="signup.html">在线报名</a>
                     <a href="contact.html">联系我们</a>
@@ -166,7 +166,7 @@
             	<li th:each="item:${articles}">
                 	<a href="taociYanXueDetails.html" th:href="|taociYanXueDetails.html?id=${item.id}|">
                     	<p class="pimg"><img src="img/003.png" th:src="${item.coverUrl}"></p>
-                        <h3 th:src="${item.title}">孔庙国学之行</h3>
+                        <h3 th:text="${item.title}">孔庙国学之行</h3>
                     </a>
                 </li>
             	<!--<li>
