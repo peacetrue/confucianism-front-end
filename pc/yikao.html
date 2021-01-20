@@ -96,7 +96,7 @@
             <ul class="ms_one">
             	<li th:each="item:${classGrades}">
                 	<a href="yikaoClassDetails.html" class="a" th:href="|yikaoClassDetails.html?id=${item.id}|">
-                    	<img src="img/003.png" th:src="${item.pcPhotoUrl}">
+                    	<img src="img/003.png" th:src="${item.pcPhotoRightUrl}">
                         <p class="top" th:utext="${item.title}">（美术）综合班</p>
                         <div class="desc" th:utext="${item.intro}">
                         	针对联考及全国综合院校，联考保过二本线以上、一般单招保过。（主修专业：素描、色彩、速写）
