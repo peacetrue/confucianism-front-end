@@ -250,3 +250,12 @@ body{ background:#F6F6F6}
 .xq_bai .ms_four{ margin-bottom:0}
 .xq_main{ width:100%}
 .ms_six{ margin-top:0px;}
+
+.tc_four li:hover .bottom .desc p,.tc_four li:hover .name{color: #fff;}
+.ms_four li.right{ margin-right:22px;}
+.box-4.right li{margin-right: 0;margin-left: 14px;}
+.partner-box img{margin: 0 32px;}
+.partner-box .partner-box-1{ width:104%; margin-left:-2%}
+.m-school-data {-moz-box-shadow: 0px 2px 5px #D6D6D6;-webkit-box-shadow: 0px 2px 5px #D6D6D6;box-shadow: 0px 2px 5px #D6D6D6;}
+.m-advantage {-moz-box-shadow: 0px 2px 5px #D6D6D6;-webkit-box-shadow: 0px 2px 5px #D6D6D6;box-shadow: 0px 2px 5px #D6D6D6;}
+
