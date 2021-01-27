@@ -45,7 +45,8 @@
         <!--标题banner 与 位置 end-->
 
         <!--主体内容 start-->
-        <!--<div class="main">
+<!--
+        <div class="main">
         	<div class="xq_bai">
 				<div class="zp_type">
 					<a href="#" class="sel" th:each="item: ${areas}" th:class="${itemStat.first}?'sel'" th:text="${item.name}">意大利公费留学</a>>
@@ -57,13 +58,18 @@
                 </ul>
 
             </div>
-        </div>-->
+        </div>
+-->
         <div class="main">
-        	<div class="xq_bai">
+        	<div class="xq_bai" th:each="area: ${areas}" >
 
-                <div class="liu_four">意大利公费留学</div>
+                <div class="liu_four" th:text="${area.name}">意大利公费留学</div>
                 <ul class="liu_five">
-                	<li>
+                	<li th:each="item: ${area.content}">
+                    	<img src="img/003.png" class="img" th:src="${item}">
+<!--                        <h3>列宾美院</h3>-->
+                    </li>
+                	<!--<li>
                     	<img src="img/003.png" class="img">
                         <h3>列宾美院</h3>
                     </li>
@@ -90,15 +96,11 @@
                 	<li>
                     	<img src="img/003.png" class="img">
                         <h3>列宾美院</h3>
-                    </li>
-                	<li>
-                    	<img src="img/003.png" class="img">
-                        <h3>列宾美院</h3>
-                    </li>
+                    </li>-->
                 </ul>
 
             </div>
-            <div class="xq_bai">
+            <!--<div class="xq_bai">
 
                 <div class="liu_four">俄罗斯公费留学</div>
                 <ul class="liu_five">
@@ -136,7 +138,7 @@
                     </li>
                 </ul>
 
-            </div>
+            </div>-->
         </div>
         <!--主体内容 end-->
 
