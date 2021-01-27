@@ -2,6 +2,9 @@
 .idea
 page-area-config
 class-grade
+student
+success-case
+teacher
 generated
 article
 build-template.sh
