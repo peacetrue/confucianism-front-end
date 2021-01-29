@@ -33,9 +33,9 @@ var commonJS = {
 }
 
 $(function(){
-	commonJS.tabSwich('.c-section-1');
-	commonJS.tabSwich('.c-section-2');
-	commonJS.tabSwich('.c-section-3');
+	//commonJS.tabSwich('.c-section-1');
+	//commonJS.tabSwich('.c-section-2');
+	//commonJS.tabSwich('.c-section-3');
 	//$('.school-box').html('');
 	
 	
@@ -52,10 +52,12 @@ $(function(){
 	$(".title-box").each(function(a){
 		$(".title-box:eq("+a+") .tab-title-item").click(function(){
 			var i=$(".title-box:eq("+a+") .tab-title-item").index(this);
-			$(".tab-title:eq("+a+") .tab-title-item").removeClass("active");
+			$(".title-box:eq("+a+") .tab-title-item").removeClass("active");
 			$(this).addClass("active");
 			$(".title-box:eq("+a+") .more").hide();
 			$(".title-box:eq("+a+") .more").eq(i).show();
+			$(".tab-content:eq("+a+") .tab-content-item").hide();
+			$(".tab-content:eq("+a+") .tab-content-item").eq(i).show();
 		})
 	})
 })

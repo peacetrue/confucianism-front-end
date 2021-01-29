@@ -183,7 +183,7 @@ body{
 	height: 184px;
 	float: left;
 	margin-right: 14px;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 .box-4 li a{
 	display: block;
@@ -228,7 +228,7 @@ body{
 .box-1 img{
 	display: block;
 	width:552px;
-	height: 385px;
+	height: 388px;
 }
 
 .box-teacher{
@@ -518,7 +518,7 @@ body{
 .menu-box dt{ float:left; width:100%; box-sizing:border-box; border-left:6px solid #FF9B29; height:18px; line-height:18px; font-size:20px; padding-left:20px; margin:20px 0; font-weight:bold;}
 .menu-box dd{ float:left; width:100%; box-sizing:border-box; padding-left:26px; line-height:36px; font-size:16px; color:#333333; cursor:pointer;}
 .menu-box dl{ padding-top:10px; float:left; width:100%; height:355px; overflow:auto;}
-.menu-box dl:nth-child(2){ margin-top:15px;}
+.menu-box dl:nth-child(2){ margin-top:15px; max-height:310px;}
 .menu-box dd.sel{ color:#FF9B29;}
 
 .sy_one{ float:right; width:980px; box-sizing:border-box; padding-right:20px;}
@@ -546,9 +546,9 @@ body{
 .sy_two{ float:left; width:100%;}
 .sy_two .left{ float:left; width:530px; padding-left:20px;}
 .sy_two .left .top1{ padding-left:35px; background:url(../img/bg_14.png) no-repeat left 2px; float:left; width:100%; box-sizing:border-box;}
-.sy_two .left p{ float:left; width:100%; padding-bottom:13px; line-height:28px; color:#333333; font-size:16px;box-sizing:border-box;}
-.sy_two .left .p2{  padding-left:35px; background:url(../img/bg_15.png) no-repeat left center; padding-bottom:0; margin:15px 0;}
-.sy_two .left .p3{ background:url(../img/bg_16.png)  no-repeat left center; padding-left:35px; padding-bottom:0; margin:15px 0;}
+.sy_two .left p{ float:left; width:100%; padding-bottom:12px; line-height:28px; color:#333333; font-size:16px;box-sizing:border-box;}
+.sy_two .left .p2{  padding-left:35px; background:url(../img/bg_15.png) no-repeat left center; padding-bottom:0; margin:12px 0;}
+.sy_two .left .p3{ background:url(../img/bg_16.png)  no-repeat left center; padding-left:35px; padding-bottom:0; margin:5px 0;}
 .sy_two .left .p4{ float:left; padding-left:0; margin-top:20px;}
 .sy_two .left .p4 span{ background:#006300; height:30px; float:left; border-radius:8px; padding:0px 15px; color:#fff; margin-right:10px;}
 .sy_two .dt{ float:right; width:530px; height:380px;}

@@ -1599,7 +1599,8 @@
                         	<p>一校区：北京市海淀区农大南路树村郊野公园16号院 （距离北大、清华、5公里）</p>
                         	<p>二校区：北京市大兴区芦花路临22号董陶窑陶瓷制作研究所</p>
                         </div>
-                    	<p class="p2">专业课老师：<th:block th:utext="${teacherContact}">13155463372</th:block></p>
+                    	<p class="p2" style="margin-bottom:0">专业课老师：<th:block th:utext="${teacherContact}">13155463372</th:block></p>
+                    	<p class="p2">专业课老师：13155463372</p>
                         <p class="p3">邮箱：<th:block th:utext="${email}">1315546337@qq.com</th:block></p>
                         <p class="p4"><span>服务热线</span><th:block th:text="${contact}">400-9973-993</th:block></p>
                     </div>
@@ -1812,7 +1813,7 @@
 					<div class="tab-content-item clearfix" style="display: block;">
 						<a class="box-1 left"><img src="img/thumb.png" th:src="${workChildrenArtRight}"></a>
 						<ul class="box-4 right">
-							<li th:each="item:${workChildrenArtLeft}"><a href="#"><img src="img/thumb.png" th:src="${item}"/></a></li>
+							<li th:each="item:${workChildrenArtLeft}"><a><img src="img/thumb.png" th:src="${item}"/></a></li>
 							<!--<li><a><img src="img/thumb.png"/></a></li>
 							<li><a><img src="img/thumb.png"/></a></li>
 							<li><a><img src="img/thumb.png"/></a></li>-->
