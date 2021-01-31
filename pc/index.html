@@ -145,9 +145,9 @@
 
 		<div class="school-box">
 			<div class="menu-box">
-				<dl>
-					<dt>各大美院</dt>
-					<dd class="sel" th:each="college:${artColleges}" th:utext="${college.name}" th:class="${collegeStat.first}?'sel'">清华美术学院</dd>
+				<dl th:each="collegeType:${collegeTypes}">
+					<dt th:text="${collegeType.name}">各大美院</dt>
+					<dd class="sel" th:each="college:${collegeType.colleges}" th:utext="${college.name}" th:class="${collegeTypeStat.first&&collegeStat.first}?'sel'">清华美术学院</dd>
 					<!--<dd>中央美术学院</dd>
 					<dd>中国美术学院</dd>
 					<dd>鲁迅美术学院</dd>
@@ -156,16 +156,16 @@
 					<dd>中国美术学院</dd>
 					<dd>鲁迅美术学院</dd>-->
 				</dl>
-				<dl>
+				<!--<dl>
 					<dt>其他院校</dt>
 					<dd th:each="college:${otherColleges}" th:utext="${college.name}">清华美术学院</dd>
-					<!--<dd>中央美术学院</dd>
+					<dd>中央美术学院</dd>
 					<dd>中国美术学院</dd>
 					<dd>鲁迅美术学院</dd>
 					<dd>清华美术学院</dd>
 					<dd>中央美术学院</dd>
-					<dd>中国美术学院</dd>-->
-				</dl>
+					<dd>中国美术学院</dd>
+				</dl>-->
 			</div>
 
             <!--有多少个 dd 就绑定 多少组右侧内容区域，这里只做前3个点击后显示数据效果-->
