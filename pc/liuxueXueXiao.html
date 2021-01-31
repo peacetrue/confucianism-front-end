@@ -49,10 +49,10 @@
         	<div class="xq_bai">
 
                 <ul class="ms_four liu_two">
-                    <li class="li right" th:each="item:${colleges}" th:class="${itemStat.index%10==0}?'right'" th:classappend="${itemStat.index%5==0}?'li'">
+                    <li class="li right" th:each="item:${article3s}" th:class="${itemStat.index%10==0}?'right'" th:classappend="${itemStat.index%5==0}?'li'">
                         <div class="pimg">
-                            <img src="img/003.png" th:src="${item.pcPhotoUrl}">
-                            <div class="desc" th:utext="${item.name}">大连东软信息学院</div>
+                            <img src="img/003.png" th:src="${item.cover}">
+                            <div class="desc" th:utext="${item.title}">大连东软信息学院</div>
                         </div>
                     </li>
                     <!--<li>
