@@ -517,9 +517,11 @@ body{
 .menu-box{ float:left; width:160px; background:url(../img/bg_08.jpg) no-repeat right bottom; margin:0px 0; margin-left:20px; height:690px;}
 .menu-box dt{ float:left; width:100%; box-sizing:border-box; border-left:6px solid #FF9B29; height:18px; line-height:18px; font-size:20px; padding-left:20px; margin:20px 0; font-weight:bold;}
 .menu-box dd{ float:left; width:100%; box-sizing:border-box; padding-left:26px; line-height:36px; font-size:16px; color:#333333; cursor:pointer;}
-.menu-box dl{ padding-top:10px; float:left; width:100%; height:355px; overflow:auto;}
+.menu-box dl{ padding-top:10px; float:left; width:100%;}
 .menu-box dl:nth-child(2){ margin-top:15px; max-height:310px;}
 .menu-box dd.sel{ color:#FF9B29;}
+.menu-box .nei{ float:left; width:100%; height:300px; overflow:auto;}
+.menu-box dl:nth-child(2) .nei{ float:left; width:100%; height:252px; overflow:auto;}
 
 .sy_one{ float:right; width:980px; box-sizing:border-box; padding-right:20px;}
 .sy_one .top{ float:left; width:100%;  position:relative; margin-top:20px; text-align:center; line-height:34px; font-size:16px; color:#333333; padding-bottom:5px;}
@@ -528,10 +530,14 @@ body{
 .sy_one .school-name span{ color:#E5E5E5; font-size:18px;}
 
 .sy_one .demo{ float:left; width:100%; overflow:hidden; height:630px; overflow:hidden;}
-.sy_one .report-box{ float:left; width:100%}
-.sy_one .report-box li{ float:left; width:20%; padding-left:20px; box-sizing:border-box;}
+/*.sy_one .report-box{ float:left; width:100%}
+.sy_one .report-box li{ float:left; width:20%; padding-left:20px; box-sizing:border-box;}*/
+.sy_one .report-box{ width:100%}
+.sy_one .report-box li{width:100%; height:315px}
+.sy_one .report-box li .nei{ float:left; width:30%;width:20%; padding-left:20px; box-sizing:border-box;}
+
 .sy_one .report-box li .img{ float:left; width:100%; height:230px;}
-.sy_one .report-box li .name{ float:left; width:100%; text-align:center; line-height:30px; background:url(../img/bg_09.png) no-repeat bottom center; font-size:18px; color:#333333;}
+.sy_one .report-box li .name{ float:left; width:100%; text-align:center; line-height:30px; background:url(../img/bg_09.png) no-repeat bottom center; font-size:18px; color:#333333;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
 .sy_one .report-box li .desc{ float:left; width:100%; height:50px; line-height:24px; text-align:center; font-size:14px; margin-top:5px;}
 
 .m-count .item-box .img1,.m-count .item-box:hover .img2{ display:block}
@@ -557,22 +563,4 @@ body{
 .ul_hd{ float:left; width:100%;}
 .ul_hd li{ float:left; width:256px; height:180px; border-radius:3px; overflow:hidden;-moz-box-shadow:0px 0px 3px #BFBFBF; -webkit-box-shadow:0px 0px 3px #BFBFBF; box-shadow:0px 0px 3px #BFBFBF; margin-bottom:20px; margin-left:20px;}
 .ul_hd li img{ float:left; width:100%; height:100%;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
