@@ -56,7 +56,7 @@ $(function(){
 			$(this).addClass("active");
 			$(".qie_name:eq("+a+") .more").hide();
 			$(".qie_name:eq("+a+") .more").eq(i).show();
-			alert(a);
+			//alert(a);
 			$(".tab-content:eq("+a+") .tab-content-item").hide();
 			$(".tab-content:eq("+a+") .tab-content-item").eq(i).show();
 		})
