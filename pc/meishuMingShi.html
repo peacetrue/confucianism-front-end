@@ -52,7 +52,7 @@
                 	<li th:each="item:${teachers}">
                     	<img src="img/007.png" class="img" th:src="${item.pcPhotoUrl}">
                         <div class="bottom">
-                            <p class="name" th:text="${item.name}">李刚 儒艺教育总校长</p>
+							<p class="name"><th:block th:text="${item.name}">李刚</th:block> <th:block th:text="${item.intro}">儒艺教育总校长</th:block></p>
                             <div class="desc" th:text="${item.intro}">
                             	李刚 儒艺教育总校长,毕业于中央美院造型学院，作品出版《教学对话》、《实力教学》、《经典全集》、《笔笔皆是》、《图画图书》等。
                             </div>

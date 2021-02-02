@@ -157,7 +157,7 @@
     </div>
     <ul class="ms_four liu_two">
         <li class="li right" th:each="item:${article3s}" th:class="${itemStat.index%10==0}?'right'"
-            th:classappend="${itemStat.index%5==0}?'li'">
+            th:classappend="${itemStat.index%5==0}?'li'" th:if="${itemStat.index<5}">
             <div class="pimg">
                 <img src="img/003.png" th:src="${item.cover}">
                 <div class="desc" th:utext="${item.title}">大连东软信息学院</div>
