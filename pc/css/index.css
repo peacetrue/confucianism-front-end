@@ -405,6 +405,7 @@ body{
 .about-desc{
 	width: 520px;
 	float: right;
+	margin-right:15px;
 }
 .about-desc .nav{
 	margin-bottom: 30px;
