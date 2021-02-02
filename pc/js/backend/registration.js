@@ -73,7 +73,7 @@ Registration.classGradeOptions = {
     phone: 'input[type=text]:eq(2)',
     type: '.sel_xz',
     classGrade: '.sel_xz',
-    email: 'input[type=text]:eq(3)',
+    email: 'input[type=text]:eq(4)',
     submit: '.btn_tj'
     // successMessage: '报名成功'
 }
