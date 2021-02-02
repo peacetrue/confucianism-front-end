@@ -177,10 +177,12 @@
                 </div>
                 <div class="demo">
                     <ul class="report-box">
-                        <li th:each="successCase:${college.successCases}">
-                            <img src="img/index-5.png" class="img" th:src="${successCase.pcPhotoUrl}"/>
-                            <div class="name" th:utext="${successCase.studentName}">王 * 月</div>
-                            <div class="desc" th:utext="${successCase.title}">斩获清华美术学院工艺美术专业全国第32名</div>
+                        <li th:each="i:${#numbers.sequence(0, #lists.size(college.successCases)/5)}">
+							<div class="nei" th:each="j:${#numbers.sequence(0, 4)}" th:if="${i*5+j<#lists.size(college.successCases)}" th:object="${college.successCases[i*5+j]}">
+								<img src="img/index-5.png" class="img" th:src="${pcPhotoUrl}"/>
+								<div class="name" th:utext="${studentName}">王 * 月</div>
+								<div class="desc" th:utext="${title}">斩获清华美术学院工艺美术专业全国第32名</div>
+							</div>
                         </li>
                         <!--
                         <li>
