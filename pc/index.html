@@ -177,7 +177,7 @@
                 </div>
                 <div class="demo">
                     <ul class="report-box">
-                        <li th:each="i:${#numbers.sequence(0, #lists.size(college.successCases)/5)}">
+                        <li th:each="i:${#numbers.sequence(0, #lists.size(college.successCases)/5)}" th:if="${i*5<#lists.size(college.successCases)}">
 							<div class="nei" th:each="j:${#numbers.sequence(0, 4)}" th:if="${i*5+j<#lists.size(college.successCases)}" th:object="${college.successCases[i*5+j]}">
 								<img src="img/index-5.png" class="img" th:src="*{pcPhotoUrl}"/>
 								<div class="name" th:utext="*{studentName}">王 * 月</div>
